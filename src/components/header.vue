@@ -98,7 +98,7 @@ input[name="search-box"]::placeholder {
   margin: 0px 14px;
 }
 .tab1{
-  background: linear-gradient(to right, red, purple);
+  background: linear-gradient(to right, #2D9BEF, #9B2DEF);
   padding: 1px;
   border-radius: 40px;
 }
