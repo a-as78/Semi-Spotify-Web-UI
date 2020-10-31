@@ -1,5 +1,42 @@
 <template>
-  <div>
+  <div class="player-body row-flex">
+    <div class="song row-flex">
+      <div class="song-cover">
+        <img src="../assets/Images/Image 59.png" alt="cover">
+      </div>
+      <div class="song-detail column-flex">
+        <div class="song-name">Rebel Rebel</div>
+        <div class="song-artist">David Bowie</div>
+      </div>
+      <div class="song-feature">
+        <img class="player-like-icon" 
+             src="../assets/Icons/add to fav.svg" alt="fav">
+        <img class="player-playlist-check-icon" 
+             src="../assets/Icons/Alredy in Playlist.svg" alt="Already in Playlist">
+      </div>
+    </div>
+    <div class="player-section">
+      <div class="player-buttons row-flex">
+        <img src="../assets/Icons/Shuffle18.svg" alt="shuffle">
+        <img src="../assets/Icons/prev.svg" alt="shuffle">
+        <img src="../assets/Icons/Pause.svg" alt="shuffle">
+        <img src="../assets/Icons/next.svg" alt="shuffle">
+        <img src="../assets/Icons/Repeat 18.svg" alt="shuffle">
+      </div>
+      <div class="player-duration-bar row-flex">
+        <div class="played-duration">2:00</div>
+        <div class="player-bar"></div>
+        <div class="player-song-duration">4:00</div>
+      </div>
+    </div>
+    <div class="settings row-flex">
+      <div class="player-playlist">
+        <img src="../assets/Icons/Queue.svg" alt="Queue">
+      </div>
+      <div class="player-volume">
+        <img src="../assets/Icons/Volume.svg" alt="Volume">
+      </div>
+    </div>
   </div>
 </template>
 
@@ -12,5 +49,66 @@ export default {
 </script>
 
 <style>
-
+.row-flex{
+  display: flex;
+  flex-direction: row;
+}
+.column-flex{
+  display: flex;
+  flex-direction: column;
+}
+.player-body{
+  width: 110%;
+  max-width: 1860px;
+  background-color: #3A3A3D;
+  padding: 10px;
+  border-radius: 8px;
+  justify-content: space-between;
+  align-items: center;
+}
+.song-name{
+  color: white;
+  font-size: 15px;
+}
+.song-artist{
+  color: #99999F;
+  font-size: 13px;
+}
+.song-detail{
+  padding: 10px;
+  justify-content: center;
+}
+.song-feature{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.player-section{
+  width: max-content;
+  justify-content: center;
+  align-items: center;
+}
+.player-playlist-check-icon , .player-like-icon{
+  padding: 12px;
+}
+.player-buttons{
+  width: 200px;
+  padding-bottom: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+.player-bar{
+  height: 5px;
+  border-bottom: 1px solid white;
+  width: 300px;
+}
+.player-playlist, .player-volume{
+  padding: 0px 12px;
+}
+.player-duration-bar{
+  color: white;
+}
+.played-duration, .player-song-duration{
+  padding: 0px 5px;
+}
 </style>

@@ -101,7 +101,7 @@ export default {
   align-items: center;
   position: absolute;
   bottom: 50px;
-  right: 10px;
+  right: 27px;
 }
 .flow-body{
   width: 370px;
@@ -111,8 +111,17 @@ export default {
   top: 0px;
 }
 .flow-info{
+  height: 20px;
   color: white;
   align-content: center;
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.flow-footer{
+  font-size: 10px;
+  text-align: center;
+  color: #D5D5D5;
 }
 .flow-icon{
   background-color: #1C1C1C;

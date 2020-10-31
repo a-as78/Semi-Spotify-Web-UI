@@ -1,7 +1,7 @@
 <template>
-  <div class="top-navigation row-flex">
-    <div class="row-flex">
-      <div class="dashboard row-flex">
+  <div class="top-navigation row-reverse-flex">
+    <div class="row-reverse-flex">
+      <div class="dashboard row-reverse-flex">
         <div class="dashboard-arrow">
           <img src="../assets/Icons/Path 690.svg">
         </div>
@@ -22,8 +22,8 @@
     <div class="navigation-bar">
 
     </div>
-    <div class="row-flex">
-      <div class="tabs row-flex">
+    <div class="row-reverse-flex">
+      <div class="tabs row-reverse-flex">
         <div class="tab tab1">
           <div class="active-tab">Home</div>
         </div>
@@ -46,7 +46,7 @@ export default {
 </script>
 
 <style>
-.row-flex{
+.row-reverse-flex{
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
@@ -55,6 +55,7 @@ export default {
 .top-navigation{
   height: 50px;
   background-color: #161A1A;
+  filter: blur();
   padding: 22px 40px;
 }
 .dashboard{
