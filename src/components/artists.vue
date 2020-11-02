@@ -42,7 +42,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 .artists{
   justify-content: space-between;
 }
@@ -66,12 +66,14 @@ export default {
   align-items: center;
   font-size: 13px;
   color: #FFFFFF;
-}
+  }
+
 .artist-like-number{
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;  font-size: 13px;
+  align-items: center;
+  font-size: 13px;
   color: #99999F;
 }
 </style>
