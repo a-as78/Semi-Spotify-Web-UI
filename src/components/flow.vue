@@ -12,7 +12,7 @@
         <img class="flow-body"
              src="../assets/Images/Flow Body.svg" alt="filter">
         <div class="flow-icon">
-          <img src="../assets/Images/Path 368.svg" alt="add">
+          <img src="../assets/Images/Path 368.svg" alt="play">
         </div>
         <div class="flow">
           <div class="flow-info">Your Personal Soundtrack</div>
@@ -130,6 +130,6 @@ export default {
   left: 100px;
   z-index: 2;
   border-radius: 50%;
-  padding: 5px;
+  padding: 10px;
 }
 </style>

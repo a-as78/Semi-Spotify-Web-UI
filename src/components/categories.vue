@@ -1,7 +1,10 @@
 <template>
-  <div class="row-flex">
-    <div class="category">
-      <img v-for="(url, index) in categoriesUrl" :key="index" :src= url alt="cover">
+  <div class="categories row-flex">
+    <div class="category row-flex"
+         v-for="(url, index) in categoriesUrl" 
+         :key="index">
+      <img :src= "url" 
+           alt="cover">
     </div>
   </div>
 </template>
@@ -14,7 +17,7 @@ export default {
   data(){
     return{
       categoriesUrl: [
-        "../assets/Images/HIP - HOP.svg",
+        'src: "../assets/Images/HIP - HOP.svg"',
         "../assets/Images/Indie.svg",
         "../assets/Images/POP.svg",
         "../assets/Images/rock.svg",
@@ -27,5 +30,15 @@ export default {
 </script>
 
 <style>
-
+.categories{
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+}
+.category{
+  width: 200px;
+  height: 50px;
+  background-color: burlywood;
+}
 </style>
