@@ -1,12 +1,12 @@
 <template>
   <div class="player-body row-flex">
     <div class="song row-flex">
-      <div class="song-cover">
+      <div class="player-song-cover">
         <img src="../assets/Images/Image 59.png" alt="cover">
       </div>
       <div class="song-detail column-flex">
-        <div class="song-name">Rebel Rebel</div>
-        <div class="song-artist">David Bowie</div>
+        <div class="player-song-name">Rebel Rebel</div>
+        <div class="player-song-artist">David Bowie</div>
       </div>
       <div class="song-feature">
         <img class="player-like-icon" 
@@ -66,11 +66,11 @@ export default {
   justify-content: space-between;
   align-items: center;
 }
-.song-name{
+.player-song-name{
   color: white;
   font-size: 15px;
 }
-.song-artist{
+.player-song-artist{
   color: #99999F;
   font-size: 13px;
 }
@@ -92,7 +92,8 @@ export default {
   padding: 12px;
 }
 .player-buttons{
-  width: 200px;
+  width: 80%;
+  padding: 0px 10%;
   padding-bottom: 20px;
   justify-content: space-between;
   align-items: center;
@@ -110,5 +111,12 @@ export default {
 }
 .played-duration, .player-song-duration{
   padding: 0px 5px;
+}
+.song , .settings{
+  width: 300px;
+}
+.settings{
+  display: flex;
+  justify-content: flex-end;
 }
 </style>

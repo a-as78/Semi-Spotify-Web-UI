@@ -46,12 +46,6 @@ export default {
 </script>
 
 <style>
-.row-reverse-flex{
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  align-items: center;
-}
 .top-navigation{
   height: 50px;
   background-color: #161A1A;
