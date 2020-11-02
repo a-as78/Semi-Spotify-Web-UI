@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
   <div class="row-flex">
     <div class="category">
 
@@ -7,13 +6,6 @@
            :key="index" 
            :src="url"
             style="color: white"
-=======
-  <div class="categories row-flex">
-    <div class="category row-flex"
-         v-for="(url, index) in categoriesUrl" 
-         :key="index">
-      <img :src= "url" 
->>>>>>> header
            alt="cover">
     </div>
   </div>
@@ -27,21 +19,12 @@ export default {
   data(){
     return{
       categoriesUrl: [
-<<<<<<< HEAD
         require("../assets/Images/HIP - HOP.svg"),
         require("../assets/Images/Indie.svg"),
         require("../assets/Images/POP.svg"),
         require("../assets/Images/rock.svg"),
         require("../assets/Images/DANCE - ELECTRO.svg"),
         require("../assets/Images/Country.svg")
-=======
-        require("../assets/Images/HIP - HOP.svg"),
-        require("../assets/Images/Indie.svg"),
-        require("../assets/Images/POP.svg"),
-        require("../assets/Images/rock.svg"),
-        require("../assets/Images/DANCE - ELECTRO.svg"),
-        require("../assets/Images/Country.svg")
->>>>>>> header
       ]
     }
   }
