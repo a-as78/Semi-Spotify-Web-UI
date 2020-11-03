@@ -50,7 +50,7 @@ export default {
 
 <style>
 .player-body{
-  width: 110%;
+  width: 90%;
   max-width: 1860px;
   background-color: #3A3A3D;
   padding: 10px;

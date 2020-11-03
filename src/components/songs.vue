@@ -1,9 +1,7 @@
 <template>
   <div class="songs column-flex">
-    <div class="songs-header row-flex">
-      <div>New Releases for You</div>
-      <div class="view-all">VIEW ALL</div>
-    </div>
+    <component-header :title="title"
+                      :viewAll="true"></component-header>
     <div class="songs-body row-flex">
       <div class="song column-flex"
            v-for="(url, index) in songsUrl" 
@@ -19,20 +17,19 @@
 </template>
 
 <script>
+import ComponentHeader from './componentHeader.vue';
 
 export default {
   components: {
+    ComponentHeader
+  },
+  prop: {
+    songsUrl: Object
   },
   data(){
     return{
-      songsUrl: [
-        require("../assets/Images/Image 418.png"),
-        require("../assets/Images/Image 419.png"),
-        require("../assets/Images/Image 693.png"),
-        require("../assets/Images/Image 695.png"),
-        require("../assets/Images/Image 696.png"),
-        require("../assets/Images/Mask Group 237.png")
-      ]
+      title: "New Releases for You",
+      songsUrl: this.songsUrl
     }
   }
 }

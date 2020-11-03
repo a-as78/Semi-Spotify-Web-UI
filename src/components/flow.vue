@@ -131,5 +131,10 @@ export default {
   z-index: 2;
   border-radius: 50%;
   padding: 10px;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

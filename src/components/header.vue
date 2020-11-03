@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="top-navigation row-reverse-flex">
     <div class="row-reverse-flex">
       <div class="dashboard row-reverse-flex">
@@ -35,6 +36,7 @@
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -49,7 +51,7 @@ export default {
 .top-navigation{
   height: 50px;
   background-color: #161A1A;
-  filter: blur();
+  filter: blur(3);
   padding: 22px 40px;
 }
 .dashboard{

@@ -1,21 +1,15 @@
 <template>
-  <div>
-      <app-header></app-header>
-      <div class="home-body">
-        <home-flow></home-flow>       
-        <app-player></app-player>
-        <app-recently-played></app-recently-played>
-        <app-categories></app-categories>
-        <app-songs></app-songs>
-        <app-artists></app-artists>
-      </div>
-  </div>
+    <div class="home-body">
+      <home-flow></home-flow>       
+      <app-recently-played></app-recently-played>
+      <app-categories></app-categories>
+      <app-songs :songsUrl='songsUrl'></app-songs>
+      <app-artists></app-artists>
+    </div>
 </template>
 
 <script>
-import AppHeader from '../components/header.vue'
 import HomeFlow from '../components/flow.vue'
-import AppPlayer from '../components/player.vue'
 import AppCategories from '../components/categories.vue'
 import AppSongs from '../components/songs.vue'
 import AppArtists from '../components/artists.vue'
@@ -23,22 +17,34 @@ import AppRecentlyPlayed from '../components/recentlyplayed.vue'
 
 export default {
   components: {
-      AppHeader,
       HomeFlow,
-      AppPlayer,
       AppCategories,
       AppSongs,
       AppArtists,
       AppRecentlyPlayed
+  },
+  data(){
+    return{
+      songsUrl: [
+        require("../assets/Images/Image 418.png"),
+        require("../assets/Images/Image 419.png"),
+        require("../assets/Images/Image 693.png"),
+        require("../assets/Images/Image 695.png"),
+        require("../assets/Images/Image 696.png"),
+        require("../assets/Images/Mask Group 237.png")
+      ]
+    }
   }
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+*{
+}
 .home-body{
   height: 100%;
   background-color: #161A1A;
-  padding: 0px 150px;
+  padding: 0px 140px;
   display: flex;
   flex-direction: column;
   justify-content: center;

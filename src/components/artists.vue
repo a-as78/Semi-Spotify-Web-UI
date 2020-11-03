@@ -1,6 +1,6 @@
 <template>
   <div class="artists column-flex">
-    <div class="artists-header row-flex">
+    <!-- <div class="artists-header row-flex">
       <div>You might like these artists</div>
       <div class="header-options row-reverse-flex">
         <div class="next">
@@ -10,7 +10,9 @@
           <img src="../assets/Icons/Path 759.svg" alt="next">
         </div>
       </div>
-    </div>
+    </div> -->
+    <component-header :title="title"
+                      :viewAll="false"></component-header>
     <div class="artists-body row-flex">
       <div class="artist column-flex"
            v-for="(url, index) in artisturl" 
@@ -33,9 +35,11 @@
 </template>
 
 <script>
+import ComponentHeader from './componentHeader.vue';
 
 export default {
   components: {
+    ComponentHeader
   },
   data(){
     return{
@@ -46,7 +50,8 @@ export default {
         require("../assets/Images/Lou Reed.png"),
         require("../assets/Images/Kurt.png"),
         require("../assets/Images/Bowie.png")
-      ]
+      ],
+      title: "You might like these artists"
     }
   }
 }
@@ -70,7 +75,6 @@ export default {
   padding: 0px 5px;
 }
 .artist-pic-body{
-  background-color: blue;
   border-radius: 50%;
   margin: 10px;
 }
