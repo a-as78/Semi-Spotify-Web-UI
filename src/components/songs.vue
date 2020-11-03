@@ -1,16 +1,23 @@
 <template>
   <div class="songs column-flex">
-    <component-header :title="title"
-                      :viewAll="true"></component-header>
+    <component-header v-if="header"
+                      :title="title"
+                      :viewAll="viewAll"></component-header>
     <div class="songs-body row-flex">
       <div class="song column-flex"
-           v-for="(url, index) in songsUrl" 
+           v-for="(url, index) in urls" 
            :key="index">
         <img class="song-cover"
              :src= "url" 
              alt="cover">
         <div class="song-name">hii</div>
-        <div class="song-artist">hey</div>
+        <div class="row-flex">
+          <div v-if="playlist"
+               class="artist-like-icon">
+            <img src="../assets/Icons/heart.svg" alt="like">
+          </div>
+          <div class="song-artist">hey</div>
+        </div>
       </div>
     </div>
   </div>
@@ -23,13 +30,16 @@ export default {
   components: {
     ComponentHeader
   },
-  prop: {
-    songsUrl: Object
+  props: {
+    urls: Array,
+    header: Boolean,
+    playlist: Boolean,
+    title: String,
+    viewAll: Boolean
   },
   data(){
     return{
-      title: "New Releases for You",
-      songsUrl: this.songsUrl
+      // title: "New Releases for You"
     }
   }
 }

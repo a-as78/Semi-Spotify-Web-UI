@@ -1,17 +1,7 @@
 <template>
   <div class="artists column-flex">
-    <!-- <div class="artists-header row-flex">
-      <div>You might like these artists</div>
-      <div class="header-options row-reverse-flex">
-        <div class="next">
-          <img src="../assets/Icons/Path 434.svg" alt="next">
-        </div>
-        <div class="previous">
-          <img src="../assets/Icons/Path 759.svg" alt="next">
-        </div>
-      </div>
-    </div> -->
-    <component-header :title="title"
+    <component-header v-if="header"
+                      :title="title"
                       :viewAll="false"></component-header>
     <div class="artists-body row-flex">
       <div class="artist column-flex"
@@ -41,16 +31,12 @@ export default {
   components: {
     ComponentHeader
   },
+  props: {
+    header: Boolean,
+    artisturl: Array
+  },
   data(){
     return{
-      artisturl: [
-        require("../assets/Images/Mask Group 305.png"),
-        require("../assets/Images/Mask Group 321.png"),
-        require("../assets/Images/The Velvet Underground.png"),
-        require("../assets/Images/Lou Reed.png"),
-        require("../assets/Images/Kurt.png"),
-        require("../assets/Images/Bowie.png")
-      ],
       title: "You might like these artists"
     }
   }

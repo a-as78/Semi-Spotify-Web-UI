@@ -3,8 +3,22 @@
       <home-flow></home-flow>       
       <app-recently-played></app-recently-played>
       <app-categories></app-categories>
-      <app-songs :songsUrl='songsUrl'></app-songs>
-      <app-artists></app-artists>
+      <app-songs :title='productive'
+                 :viewAll="false"
+                 :playlist="true"
+                 :header="true"
+                 :urls='productiveUrl'></app-songs>
+      <app-songs :title='playlists'
+                 :viewAll="false"
+                 :playlist="true"
+                 :header="true"
+                 :urls='playlistUrl'></app-songs>
+      <app-songs :title='realeased'
+                 :viewAll="true"
+                 :header="true"
+                 :urls='songsUrl'></app-songs>
+      <app-artists :header="true"
+                   :artisturl="artisturl"></app-artists>
     </div>
 </template>
 
@@ -25,6 +39,22 @@ export default {
   },
   data(){
     return{
+      productiveUrl: [
+        require("../assets/Images/Brain Food.png"),
+        require("../assets/Images/Deep Focus.png"),
+        require("../assets/Images/Morning Rush.png"),
+        require("../assets/Images/Nature.png"),
+        require("../assets/Images/Productive Morning.png"),
+        require("../assets/Images/White Noise.png")
+      ],
+      playlistUrl: [
+        require("../assets/Images/Image 418.png"),
+        require("../assets/Images/Image 419.png"),
+        require("../assets/Images/Image 693.png"),
+        require("../assets/Images/Image 695.png"),
+        require("../assets/Images/Image 696.png"),
+        require("../assets/Images/Mask Group 237.png")
+      ],
       songsUrl: [
         require("../assets/Images/Image 418.png"),
         require("../assets/Images/Image 419.png"),
@@ -32,7 +62,19 @@ export default {
         require("../assets/Images/Image 695.png"),
         require("../assets/Images/Image 696.png"),
         require("../assets/Images/Mask Group 237.png")
-      ]
+      ],
+      artisturl: [
+        require("../assets/Images/Mask Group 305.png"),
+        require("../assets/Images/Mask Group 321.png"),
+        require("../assets/Images/The Velvet Underground.png"),
+        require("../assets/Images/Lou Reed.png"),
+        require("../assets/Images/Kurt.png"),
+        require("../assets/Images/Bowie.png")
+      ],
+      productive:"Make monday more producitve",
+      playlists: "Playlists picks",
+      realeased: "New releases for you",
+      playlist: true
     }
   }
 }
