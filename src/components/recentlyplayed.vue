@@ -1,5 +1,5 @@
 <template>
-  <div class="recently-played">
+  <div class="recently-played row-flex">
       <div class="header">
           <div class="title"></div>
           <div class="option"></div>
@@ -9,7 +9,7 @@
            class="body">
            <app-artists v-if="item.artist"
                         :artisturl="item.url"></app-artists>
-           <app-songs v-if="item.song"
+           <app-songs v-if="item.playlist"
                       :names='item.name'
                       :playlist="true"
                       :urls='item.url'></app-songs>
@@ -37,5 +37,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.recently-played{
+  justify-content: center;
+  align-items: center;
+}
 </style>

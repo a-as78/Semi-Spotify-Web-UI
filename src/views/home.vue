@@ -43,38 +43,46 @@ export default {
   data(){
     return{
       recentlyPlayed: [
-        // {
-        //   artist: true,
-        //   name: 'Queen',
-        //   url: '../assets/Images/Image 591.png'
-        // },
+        {
+          artist: true,
+          name:[ 'Queen'],
+          url: [
+            require('../assets/Images/Mask Group 228.png')
+            ]
+        },
         {
           playlist: true,
           name: ["70s Rock Anthems Radio"],
           url: [
-            '../assets/Images/70s ROCK.png'
+            require('../assets/Images/PLAYLIST RADIO.png')
           ]
         },
         {
           playlist: true,
-          name: "",
-          url: ""
+          name: ["Progressive Rock"],
+          url: [
+            require('../assets/Images/PROG ROCK.png')
+          ]
         },
         {
           playlist: true,
-          name: "",
-          url: ""
+          name: ["StarTalk Radio"],
+          url: [
+            require('../assets/Images/Image 591.png')
+          ]
         },
         {
           playlist: true,
-          name: "",
-          url: ""
+          name: ["70s Rock Anthems"],
+          url: [
+            require('../assets/Images/70s ROCK.png')
+          ]
         },
         {
           song: true,
           name: ["The Next Day"],
           url: [
-            '../assets/Images/Mask Group 248.png'
+            require('../assets/Images/Mask Group 248.png')
           ]
         }
       ],
