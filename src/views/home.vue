@@ -1,7 +1,7 @@
 <template>
     <div class="home-body">
       <home-flow></home-flow>       
-      <app-recently-played></app-recently-played>
+      <app-recently-played :recentlyPlayed="recentlyPlayed"></app-recently-played>
       <app-categories></app-categories>
       <app-songs :title='productive'
                  :names='productiveName'
@@ -42,6 +42,42 @@ export default {
   },
   data(){
     return{
+      recentlyPlayed: [
+        // {
+        //   artist: true,
+        //   name: 'Queen',
+        //   url: '../assets/Images/Image 591.png'
+        // },
+        {
+          playlist: true,
+          name: ["70s Rock Anthems Radio"],
+          url: [
+            '../assets/Images/70s ROCK.png'
+          ]
+        },
+        {
+          playlist: true,
+          name: "",
+          url: ""
+        },
+        {
+          playlist: true,
+          name: "",
+          url: ""
+        },
+        {
+          playlist: true,
+          name: "",
+          url: ""
+        },
+        {
+          song: true,
+          name: ["The Next Day"],
+          url: [
+            '../assets/Images/Mask Group 248.png'
+          ]
+        }
+      ],
       productiveUrl: [
         require("../assets/Images/Deep Focus.png"),
         require("../assets/Images/White Noise.png"),
@@ -49,7 +85,6 @@ export default {
         require("../assets/Images/Productive Morning.png"),
         require("../assets/Images/Brain Food.png"),
         require("../assets/Images/Morning Rush.png")
-        
       ],
       productiveName:[
         'Deep Focus',
@@ -109,8 +144,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-*{
-}
 .home-body{
   height: 100%;
   background-color: #161A1A;
