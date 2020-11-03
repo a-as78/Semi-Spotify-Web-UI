@@ -49,14 +49,6 @@ export default {
 </script>
 
 <style>
-.row-flex{
-  display: flex;
-  flex-direction: row;
-}
-.column-flex{
-  display: flex;
-  flex-direction: column;
-}
 .player-body{
   width: 110%;
   max-width: 1860px;

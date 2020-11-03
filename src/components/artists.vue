@@ -1,8 +1,18 @@
 <template>
-  <div class="row-flex">
-    <div class="artists-header"></div>
-    <div class="artists row-flex">
-      <div class="column-flex"
+  <div class="artists column-flex">
+    <div class="artists-header row-flex">
+      <div>You might like these artists</div>
+      <div class="header-options row-reverse-flex">
+        <div class="next">
+          <img src="../assets/Icons/Path 434.svg" alt="next">
+        </div>
+        <div class="previous">
+          <img src="../assets/Icons/Path 759.svg" alt="next">
+        </div>
+      </div>
+    </div>
+    <div class="artists-body row-flex">
+      <div class="artist column-flex"
            v-for="(url, index) in artisturl" 
            :key="index">
         <div class="artist-pic-body">
@@ -30,12 +40,12 @@ export default {
   data(){
     return{
       artisturl: [
-        "../assets/Images/HIP - HOP.svg",
-        "../assets/Images/Indie.svg",
-        "../assets/Images/POP.svg",
-        "../assets/Images/rock.svg",
-        "../assets/Images/DANCE.svg",
-        "../assets/Images/Country.svg"
+        require("../assets/Images/Mask Group 305.png"),
+        require("../assets/Images/Mask Group 321.png"),
+        require("../assets/Images/The Velvet Underground.png"),
+        require("../assets/Images/Lou Reed.png"),
+        require("../assets/Images/Kurt.png"),
+        require("../assets/Images/Bowie.png")
       ]
     }
   }
@@ -44,18 +54,31 @@ export default {
 
 <style lang="scss" scoped>
 .artists{
+  width: 100%;
   justify-content: space-between;
+}
+.artists-header{
+  margin: 10px;
+  justify-content: space-between;
+  color: #FFFFFF;
+  font-size: 22px;
+}
+.next, .previous{
+  margin: 5px;
 }
 .artist-like-icon{
   padding: 0px 5px;
 }
 .artist-pic-body{
-  width: 50px;
-  height: 50px;
   background-color: blue;
   border-radius: 50%;
+  margin: 10px;
+}
+.artist-pic{
+width: 100%;
 }
 .artist-likes{
+  width: 100%;
   justify-content: center;
   align-items: center;
 }
@@ -67,12 +90,7 @@ export default {
   font-size: 13px;
   color: #FFFFFF;
   }
-
 .artist-like-number{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 13px;
   color: #99999F;
 }

@@ -1,12 +1,10 @@
 <template>
-  <div class="row-flex">
-    <div class="category">
-
-      <img v-for="(url, index) in categoriesUrl" 
-           :key="index" 
-           :src="url"
-            style="color: white"
-           alt="cover">
+  <div class="categories row-flex">
+    <div class="category"
+         v-for="(url, index) in categoriesUrl" 
+         :key="index">
+      <img class="category-cover"
+           :src="url">
     </div>
   </div>
 </template>
@@ -15,6 +13,8 @@
 
 export default {
   components: {
+  },
+  props: {
   },
   data(){
     return{
@@ -27,6 +27,8 @@ export default {
         require("../assets/Images/Country.svg")
       ]
     }
+  },
+  created(){
   }
 }
 </script>
@@ -37,10 +39,12 @@ export default {
   align-items: center;
   width: 100%;
   height: 100px;
+  margin: 20px 0px;
 }
 .category{
-  width: 200px;
-  height: 50px;
-  background-color: burlywood;
+  margin: 10px;
+}
+.category-cover{
+  width: 100%;
 }
 </style>

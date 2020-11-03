@@ -4,7 +4,8 @@
       <div class="home-body">
         <home-flow></home-flow>       
         <app-player></app-player>
-        <app-categories>jrk</app-categories>
+        <app-recently-played></app-recently-played>
+        <app-categories></app-categories>
         <app-songs></app-songs>
         <app-artists></app-artists>
       </div>
@@ -18,6 +19,7 @@ import AppPlayer from '../components/player.vue'
 import AppCategories from '../components/categories.vue'
 import AppSongs from '../components/songs.vue'
 import AppArtists from '../components/artists.vue'
+import AppRecentlyPlayed from '../components/recentlyplayed.vue'
 
 export default {
   components: {
@@ -26,7 +28,8 @@ export default {
       AppPlayer,
       AppCategories,
       AppSongs,
-      AppArtists
+      AppArtists,
+      AppRecentlyPlayed
   }
 }
 </script>
@@ -47,5 +50,8 @@ app-header{
 }
 home-flow{
   padding-top: 50px;
+}
+app-categories{
+  width: 100%;
 }
 </style>
