@@ -4,16 +4,19 @@
       <app-recently-played></app-recently-played>
       <app-categories></app-categories>
       <app-songs :title='productive'
+                 :names='productiveName'
                  :viewAll="false"
                  :playlist="true"
                  :header="true"
                  :urls='productiveUrl'></app-songs>
       <app-songs :title='playlists'
+                 :names='playlistName'
                  :viewAll="false"
                  :playlist="true"
                  :header="true"
                  :urls='playlistUrl'></app-songs>
       <app-songs :title='realeased'
+                 :names='songsName'
                  :viewAll="true"
                  :header="true"
                  :urls='songsUrl'></app-songs>
@@ -40,20 +43,37 @@ export default {
   data(){
     return{
       productiveUrl: [
-        require("../assets/Images/Brain Food.png"),
         require("../assets/Images/Deep Focus.png"),
-        require("../assets/Images/Morning Rush.png"),
+        require("../assets/Images/White Noise.png"),
         require("../assets/Images/Nature.png"),
         require("../assets/Images/Productive Morning.png"),
-        require("../assets/Images/White Noise.png")
+        require("../assets/Images/Brain Food.png"),
+        require("../assets/Images/Morning Rush.png")
+        
+      ],
+      productiveName:[
+        'Deep Focus',
+        'Productive Morning',
+        'White Noise',
+        'Nature Song',
+        "Brain Food",
+        'Morning Rush'
       ],
       playlistUrl: [
-        require("../assets/Images/Image 418.png"),
-        require("../assets/Images/Image 419.png"),
-        require("../assets/Images/Image 693.png"),
-        require("../assets/Images/Image 695.png"),
-        require("../assets/Images/Image 696.png"),
-        require("../assets/Images/Mask Group 237.png")
+        require("../assets/Images/80s alternative rock.png"),
+        require("../assets/Images/GUITAR SOLOS.png"),
+        require("../assets/Images/ROCK ballads.png"),
+        require("../assets/Images/ROCKABILLY.png"),
+        require("../assets/Images/WORKOUT rock.png"),
+        require("../assets/Images/COMPOSERS.png")
+      ],
+      playlistName:[
+        'Russian Composers',
+        'Guitar Solos',
+        'Workout Rock',
+        'Rock Ballads',
+        "80s Alternative",
+        'Rockabilly'
       ],
       songsUrl: [
         require("../assets/Images/Image 418.png"),
@@ -62,6 +82,14 @@ export default {
         require("../assets/Images/Image 695.png"),
         require("../assets/Images/Image 696.png"),
         require("../assets/Images/Mask Group 237.png")
+      ],
+      songsName:[
+        'LPS',
+        'Numb Numb Juice',
+        'Drip or Down 2',
+        'Shadows',
+        "Don't Feed the Pop Monster",
+        'HEF'
       ],
       artisturl: [
         require("../assets/Images/Mask Group 305.png"),

@@ -10,7 +10,7 @@
         <img class="song-cover"
              :src= "url" 
              alt="cover">
-        <div class="song-name">hii</div>
+        <div class="song-name">{{names[index]}}</div>
         <div class="row-flex">
           <div v-if="playlist"
                class="artist-like-icon">
@@ -35,7 +35,8 @@ export default {
     header: Boolean,
     playlist: Boolean,
     title: String,
-    viewAll: Boolean
+    viewAll: Boolean,
+    names: Array
   },
   data(){
     return{
