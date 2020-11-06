@@ -15,10 +15,10 @@
                       :playlist="true"
                       :urls='item.url'
                       :detail="item.likes"></app-songs>
-           <app-songs v-if="item.song"
+           <app-songs v-if="item.detail"
                       :names='item.name'
                       :urls='item.url'
-                      :detail="item.song"></app-songs>
+                      :detail="item.detail"></app-songs>
       </div>
       
   </div>
