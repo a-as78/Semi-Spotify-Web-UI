@@ -24,7 +24,9 @@
                  :urls='songs.url'
                  :detail="songs.detail"></app-songs>
       <app-artists :header="true"
-                   :artisturl="artisturl"></app-artists>
+                   :urls="artist.name"
+                   :names="artist.url"
+                   :detail="artist.detail"></app-artists>
     </div>
 </template>
 
@@ -52,7 +54,7 @@ export default {
           url: [
             require('../assets/Images/Mask Group 228.png')
           ],
-          artistLikes: ["111"]
+          detail: ["111"]
         },
         {
           playlist: true,
@@ -177,15 +179,40 @@ export default {
           'aaaa'
         ]
       },
-      
-      artisturl: [
-        require("../assets/Images/Mask Group 305.png"),
-        require("../assets/Images/Mask Group 321.png"),
-        require("../assets/Images/The Velvet Underground.png"),
-        require("../assets/Images/Lou Reed.png"),
-        require("../assets/Images/Kurt.png"),
-        require("../assets/Images/Bowie.png")
-      ],
+      artist: {
+        url: [
+          require("../assets/Images/Mask Group 305.png"),
+          require("../assets/Images/Mask Group 321.png"),
+          require("../assets/Images/The Velvet Underground.png"),
+          require("../assets/Images/Lou Reed.png"),
+          require("../assets/Images/Kurt.png"),
+          require("../assets/Images/Bowie.png")
+        ],
+        name: [
+          "name",
+          "name",
+          "name",
+          "name",
+          "name",
+          "name"
+        ],
+        detail: [
+          "21313",
+          "21313",
+          "21313",
+          "21313",
+          "21313",
+          "21313"
+        ]
+      },
+      // artisturl: [
+      //   require("../assets/Images/Mask Group 305.png"),
+      //   require("../assets/Images/Mask Group 321.png"),
+      //   require("../assets/Images/The Velvet Underground.png"),
+      //   require("../assets/Images/Lou Reed.png"),
+      //   require("../assets/Images/Kurt.png"),
+      //   require("../assets/Images/Bowie.png")
+      // ],
       // productive:"Make monday more producitve",
       // playlists: "Playlists picks",
       // realeased: "New releases for you",

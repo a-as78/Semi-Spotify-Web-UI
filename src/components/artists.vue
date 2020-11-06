@@ -5,19 +5,19 @@
                       :viewAll="false"></component-header>
     <div class="artists-body row-flex">
       <div class="artist column-flex"
-           v-for="(url, index) in artisturl" 
+           v-for="(url, index) in urls" 
            :key="index">
         <div class="artist-pic-body">
           <img class="artist-pic"
              :src= "url" 
              alt="cover">
         </div>
-        <div class="artist-name">hii</div>
+        <div class="artist-name">{{names[index]}}</div>
         <div class="artist-likes row-flex">
           <div class="artist-like-icon">
             <img src="../assets/Icons/heart.svg" alt="like">
           </div>
-          <div class="artist-like-number">heyy</div>
+          <div class="artist-like-number">{{detail[index]}}</div>
         </div>
       </div>
     </div>
@@ -33,8 +33,9 @@ export default {
   },
   props: {
     header: Boolean,
-    artisturl: Array,
-    artistLikes: Array
+    names: Array,
+    detail: Array,
+    urls: Array
   },
   data(){
     return{

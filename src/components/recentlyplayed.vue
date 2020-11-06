@@ -8,8 +8,9 @@
            :key="index"
            class="body">
            <app-artists v-if="item.artist"
-                        :artisturl="item.url"
-                        :artistLikes="item.likes"></app-artists>
+                        :urls="item.url"
+                        :names="item.name"
+                        :detail="item.detail"></app-artists>
            <app-songs v-if="item.playlist"
                       :names='item.name'
                       :playlist="true"
@@ -35,7 +36,10 @@ export default {
   },
   props: [
     'recentlyPlayed'
-  ]
+  ],
+  created(){
+    console.log("recently played" , this.recentlyPlayed)
+  }
 }
 </script>
 
