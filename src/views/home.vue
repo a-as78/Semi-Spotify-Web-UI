@@ -50,7 +50,7 @@ export default {
           url: [
             require('../assets/Images/Mask Group 228.png')
           ],
-          artistLikes: [111]
+          artistLikes: ["111"]
         },
         {
           playlist: true,
@@ -58,7 +58,7 @@ export default {
           url: [
             require('../assets/Images/PLAYLIST RADIO.png')
           ],
-          detail: [222]
+          detail: ["222"]
         },
         {
           playlist: true,
@@ -66,7 +66,7 @@ export default {
           url: [
             require('../assets/Images/PROG ROCK.png')
           ],
-          detail: [222]
+          detail: ["222"]
 
         },
         {
@@ -75,7 +75,7 @@ export default {
           url: [
             require('../assets/Images/Image 591.png')
           ],
-          detail: [333]
+          detail: ["333"]
         },
         {
           playlist: true,
@@ -83,7 +83,7 @@ export default {
           url: [
             require('../assets/Images/70s ROCK.png')
           ],
-          detail: [444]
+          detail: ["444"]
         },
         {
           song: true,

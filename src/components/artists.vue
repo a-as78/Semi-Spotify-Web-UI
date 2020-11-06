@@ -17,7 +17,7 @@
           <div class="artist-like-icon">
             <img src="../assets/Icons/heart.svg" alt="like">
           </div>
-          <div class="artist-like-number">{{artistLikes[index]}}</div>
+          <div class="artist-like-number">heyy</div>
         </div>
       </div>
     </div>
