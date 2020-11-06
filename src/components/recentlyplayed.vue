@@ -8,14 +8,17 @@
            :key="index"
            class="body">
            <app-artists v-if="item.artist"
-                        :artisturl="item.url"></app-artists>
+                        :artisturl="item.url"
+                        :artistLikes="item.likes"></app-artists>
            <app-songs v-if="item.playlist"
                       :names='item.name'
                       :playlist="true"
-                      :urls='item.url'></app-songs>
+                      :urls='item.url'
+                      :detail="item.likes"></app-songs>
            <app-songs v-if="item.song"
                       :names='item.name'
-                      :urls='item.url'></app-songs>
+                      :urls='item.url'
+                      :detail="item.song"></app-songs>
       </div>
       
   </div>

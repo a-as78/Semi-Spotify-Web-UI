@@ -17,7 +17,7 @@
           <div class="artist-like-icon">
             <img src="../assets/Icons/heart.svg" alt="like">
           </div>
-          <div class="artist-like-number">hey</div>
+          <div class="artist-like-number">{{artistLikes[index]}}</div>
         </div>
       </div>
     </div>
@@ -33,7 +33,8 @@ export default {
   },
   props: {
     header: Boolean,
-    artisturl: Array
+    artisturl: Array,
+    artistLikes: Array
   },
   data(){
     return{

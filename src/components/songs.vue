@@ -16,7 +16,7 @@
                class="artist-like-icon">
             <img src="../assets/Icons/heart.svg" alt="like">
           </div>
-          <div class="song-artist">hey</div>
+          <div class="song-artist">{{detail[index]}}</div>
         </div>
       </div>
     </div>
@@ -36,7 +36,8 @@ export default {
     playlist: Boolean,
     title: String,
     viewAll: Boolean,
-    names: Array
+    names: Array,
+    detail: Array
   },
   data(){
     return{

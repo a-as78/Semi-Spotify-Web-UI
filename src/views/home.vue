@@ -17,6 +17,7 @@
                  :urls='playlistUrl'></app-songs>
       <app-songs :title='realeased'
                  :names='songsName'
+                 :songNames='songNames'
                  :viewAll="true"
                  :header="true"
                  :urls='songsUrl'></app-songs>
@@ -48,42 +49,49 @@ export default {
           name:[ 'Queen'],
           url: [
             require('../assets/Images/Mask Group 228.png')
-            ]
+          ],
+          artistLikes: [111]
         },
         {
           playlist: true,
           name: ["70s Rock Anthems Radio"],
           url: [
             require('../assets/Images/PLAYLIST RADIO.png')
-          ]
+          ],
+          detail: [222]
         },
         {
           playlist: true,
           name: ["Progressive Rock"],
           url: [
             require('../assets/Images/PROG ROCK.png')
-          ]
+          ],
+          detail: [222]
+
         },
         {
           playlist: true,
           name: ["StarTalk Radio"],
           url: [
             require('../assets/Images/Image 591.png')
-          ]
+          ],
+          detail: [333]
         },
         {
           playlist: true,
           name: ["70s Rock Anthems"],
           url: [
             require('../assets/Images/70s ROCK.png')
-          ]
+          ],
+          detail: [444]
         },
         {
           song: true,
           name: ["The Next Day"],
           url: [
             require('../assets/Images/Mask Group 248.png')
-          ]
+          ],
+          detail: ['sdsax']
         }
       ],
       productiveUrl: [
@@ -133,6 +141,14 @@ export default {
         'Shadows',
         "Don't Feed the Pop Monster",
         'HEF'
+      ],
+      songNames: [
+        'aaaa',
+        'aaaa',
+        'aaaa',
+        'aaaa',
+        'aaaa',
+        'aaaa'
       ],
       artisturl: [
         require("../assets/Images/Mask Group 305.png"),
