@@ -5,39 +5,31 @@
                       :viewAll="viewAll"></component-header>
     <div class="songs-body row-flex">
       <div class="song column-flex"
-           v-for="(url, index) in urls" 
+            v-for="(song, index) in songs" 
            :key="index">
-        <img class="song-cover"
-             :src= "url" 
-             alt="cover">
-        <div class="song-name">{{names[index]}}</div>
-        <div class="row-flex">
-          <div v-if="playlist"
-               class="artist-like-icon">
-            <img src="../assets/Icons/heart.svg" alt="like">
-          </div>
-          <div class="song-artist">{{detail[index]}}</div>
-        </div>
-      </div>
+           <app-song :song="song"
+                     :playlist="playlist"></app-song>
+           </div>
     </div>
   </div>
 </template>
 
 <script>
 import ComponentHeader from './componentHeader.vue';
+import AppSong from './song.vue';
 
 export default {
   components: {
-    ComponentHeader
+    ComponentHeader,
+    AppSong
   },
   props: {
     urls: Array,
     header: Boolean,
     playlist: Boolean,
-    title: String,
     viewAll: Boolean,
-    names: Array,
-    detail: Array
+    title: String,
+    songs: Array
   },
   data(){
     return{
@@ -59,6 +51,16 @@ export default {
   color: white;
   font-size: 22px;
   font-weight: 600;
+}
+.songs-body{
+  overflow-y: hidden;
+  overflow-x: scroll;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.songs-body::-webkit-scrollbar {
+  display: none;
 }
 .view-all{
   color: #D5D5D5;

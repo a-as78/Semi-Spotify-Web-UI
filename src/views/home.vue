@@ -3,30 +3,22 @@
       <home-flow></home-flow>       
       <app-recently-played :recentlyPlayed="recentlyPlayed"></app-recently-played>
       <app-categories></app-categories>
-      <app-songs :title='productive.title'
-                 :names='productive.name'
+      <app-songs :title='productiveTitle'
                  :viewAll="false"
                  :playlist="true"
                  :header="true"
-                 :urls='productive.url'
-                 :detail="productive.detail"></app-songs>
-      <app-songs :title='playlists.title'
-                 :names='playlists.name'
-                 :viewAll="false"
+                 :songs="productive"></app-songs>
+      <app-songs :viewAll="false"
+                 :title="playlistTitle"
                  :playlist="true"
                  :header="true"
-                 :urls='playlists.url'
-                 :detail="playlists.detail"></app-songs>
-      <app-songs :title='songs.title'
-                 :names='songs.name'
+                 :songs="playlists"></app-songs>
+      <app-songs :title='songsTitle'
+                 :songs='song'
                  :viewAll="true"
-                 :header="true"
-                 :urls='songs.url'
-                 :detail="songs.detail"></app-songs>
+                 :header="true"></app-songs>
       <app-artists :header="true"
-                   :urls="artist.name"
-                   :names="artist.url"
-                   :detail="artist.detail"></app-artists>
+                   :artists="artist"></app-artists>
     </div>
 </template>
 
@@ -50,172 +42,173 @@ export default {
       recentlyPlayed: [
         {
           artist: true,
-          name:[ 'Queen'],
-          url: [
-            require('../assets/Images/Mask Group 228.png')
-          ],
-          detail: ["111"]
+          name: 'Queen',
+          url: require('../assets/Images/Mask Group 228.png'),
+          detail: "111"
         },
         {
           playlist: true,
-          name: ["70s Rock Anthems Radio"],
-          url: [
-            require('../assets/Images/PLAYLIST RADIO.png')
-          ],
-          detail: ["222"]
+          name: "70s Rock Anthems Radio",
+          url: require('../assets/Images/PLAYLIST RADIO.png'),
+          detail: "222"
         },
         {
           playlist: true,
-          name: ["Progressive Rock"],
-          url: [
-            require('../assets/Images/PROG ROCK.png')
-          ],
-          detail: ["222"]
+          name: "Progressive Rock",
+          url: require('../assets/Images/PROG ROCK.png'),
+          detail: "222"
 
         },
         {
           playlist: true,
-          name: ["StarTalk Radio"],
-          url: [
-            require('../assets/Images/Image 591.png')
-          ],
-          detail: ["333"]
+          name: "StarTalk Radio",
+          url: require('../assets/Images/Image 591.png'),
+          detail: "333"
         },
         {
           playlist: true,
-          name: ["70s Rock Anthems"],
-          url: [
-            require('../assets/Images/70s ROCK.png')
-          ],
-          detail: ["444"]
+          name: "70s Rock Anthems",
+          url: require('../assets/Images/70s ROCK.png'),
+          detail: "444"
         },
         {
           song: true,
-          name: ["The Next Day"],
-          url: [
-            require('../assets/Images/Mask Group 248.png')
-          ],
-          detail: ['sdsax']
+          name: "The Next Day",
+          url: require('../assets/Images/Mask Group 248.png'),
+          detail: 'sdsax'
         }
       ],
-      productive: {
-        title: "Make monday more producitve",
-        url: [
-          require("../assets/Images/Deep Focus.png"),
-          require("../assets/Images/White Noise.png"),
-          require("../assets/Images/Nature.png"),
-          require("../assets/Images/Productive Morning.png"),
-          require("../assets/Images/Brain Food.png"),
-          require("../assets/Images/Morning Rush.png")
-        ],
-        name: [
-          'Deep Focus',
-          'Productive Morning',
-          'White Noise',
-          'Nature Song',
-          "Brain Food",
-          'Morning Rush'
-        ],
-        detail: [
-          "244,412",
-          "244,412",
-          "244,412",
-          "244,412",
-          "244,412",
-          "244,412"
-        ]
-      },
-      playlists: {
-        title: "Playlists picks",
-        url: [
-          require("../assets/Images/80s alternative rock.png"),
-          require("../assets/Images/GUITAR SOLOS.png"),
-          require("../assets/Images/ROCK ballads.png"),
-          require("../assets/Images/ROCKABILLY.png"),
-          require("../assets/Images/WORKOUT rock.png"),
-          require("../assets/Images/COMPOSERS.png")
-        ],
-        name: [
-          'Russian Composers',
-          'Guitar Solos',
-          'Workout Rock',
-          'Rock Ballads',
-          "80s Alternative",
-          'Rockabilly'
-        ],
-        detail: [
-          "71,622",
-          "71,622",
-          "71,622",
-          "71,622",
-          "71,622",
-          "71,622"
-        ]
-      },
-      songs: {
-        title: "New releases for you",
-        url: [
-          require("../assets/Images/Image 418.png"),
-          require("../assets/Images/Image 419.png"),
-          require("../assets/Images/Image 693.png"),
-          require("../assets/Images/Image 695.png"),
-          require("../assets/Images/Image 696.png"),
-          require("../assets/Images/Mask Group 237.png")
-        ],
-        name:[
-          'LPS',
-          'Numb Numb Juice',
-          'Drip or Down 2',
-          'Shadows',
-          "Don't Feed the Pop Monster",
-          'HEF'
-        ],
-        detail: [
-          'aaaa',
-          'aaaa',
-          'aaaa',
-          'aaaa',
-          'aaaa',
-          'aaaa'
-        ]
-      },
-      artist: {
-        url: [
-          require("../assets/Images/Mask Group 305.png"),
-          require("../assets/Images/Mask Group 321.png"),
-          require("../assets/Images/The Velvet Underground.png"),
-          require("../assets/Images/Lou Reed.png"),
-          require("../assets/Images/Kurt.png"),
-          require("../assets/Images/Bowie.png")
-        ],
-        name: [
-          "name",
-          "name",
-          "name",
-          "name",
-          "name",
-          "name"
-        ],
-        detail: [
-          "21313",
-          "21313",
-          "21313",
-          "21313",
-          "21313",
-          "21313"
-        ]
-      },
-      // artisturl: [
-      //   require("../assets/Images/Mask Group 305.png"),
-      //   require("../assets/Images/Mask Group 321.png"),
-      //   require("../assets/Images/The Velvet Underground.png"),
-      //   require("../assets/Images/Lou Reed.png"),
-      //   require("../assets/Images/Kurt.png"),
-      //   require("../assets/Images/Bowie.png")
-      // ],
-      // productive:"Make monday more producitve",
-      // playlists: "Playlists picks",
-      // realeased: "New releases for you",
+      productiveTitle: "Make monday more producitve",
+      productive: [
+        {
+          name: "Deep Focus",
+          url: require("../assets/Images/Deep Focus.png"),
+          detail: "4234"
+        },
+        {
+          name: "Productive Morning",
+          url: require("../assets/Images/Productive Morning.png"),
+          detail: "5136"
+        },
+        {
+          name: "White Noise",
+          url: require("../assets/Images/White Noise.png"),
+          detail: "2545"
+        },
+        {
+          name: "Nature Song",
+          url: require("../assets/Images/Nature.png"),
+          detail: "52652"
+        },
+        {
+          name: "Brain Food",
+          url: require("../assets/Images/Brain Food.png"),
+          detail: "525562"
+        },
+        {
+          name: "Morning Rush",
+          url: require("../assets/Images/Morning Rush.png"),
+          detail: "25235"
+        }
+      ],
+      playlistTitle: "Playlist Picks",
+      playlists: [
+        {
+          name: "Russian Composers",
+          url: require("../assets/Images/COMPOSERS.png"),
+          detail: "42525"
+        },
+        {
+          name: "Guitar Solos",
+          url: require("../assets/Images/GUITAR SOLOS.png"),
+          detail: "42525"
+        },
+        {
+          name: "Workout Rock",
+          url: require("../assets/Images/WORKOUT rock.png"),
+          detail: "42525"
+        },
+        {
+          name: "Rock Ballads",
+          url: require("../assets/Images/ROCK ballads.png"),
+          detail: "42525"
+        },
+        {
+          name: "80s Alternative",
+          url: require("../assets/Images/80s alternative rock.png"),
+          detail: "42525"
+        },
+        {
+          name: "Rockabilly",
+          url: require("../assets/Images/ROCKABILLY.png"),
+          detail: "42525"
+        }
+      ],
+      songsTitle: "New releases for you",
+      song: [
+        {
+          name: "LPS",
+          url: require("../assets/Images/Image 418.png"),
+          detail: "safc sa"
+        },
+        {
+          name: "Numb Numb Juice",
+          url: require("../assets/Images/Image 419.png"),
+          detail: "vad av"
+        },
+        {
+          name: "Drip or Down 2",
+          url: require("../assets/Images/Image 693.png"),
+          detail: "badb ad "
+        },
+        {
+          name: "Shadows",
+          url: require("../assets/Images/Image 695.png"),
+          detail: "gbvsav da v"
+        },
+        {
+          name: "Don't Feed the Pop Monster",
+          url: require("../assets/Images/Image 696.png"),
+          detail: "gsafvcs "
+        },
+        {
+          name: "HEF",
+          url: require("../assets/Images/Mask Group 237.png"),
+          detail: "gsav safv"
+        }
+      ],
+      artist: [
+        {
+          name: "name",
+          url: require("../assets/Images/Mask Group 305.png"),
+          detail: "21323"
+        },
+        {
+          name: "name",
+          url: require("../assets/Images/Mask Group 321.png"),
+          detail: "21323"
+        },
+        {
+          name: "name",
+          url: require("../assets/Images/The Velvet Underground.png"),
+          detail: "21323"
+        },
+        {
+          name: "name",
+          url: require("../assets/Images/Lou Reed.png"),
+          detail: "21323"
+        },
+        {
+          name: "name",
+          url: require("../assets/Images/Kurt.png"),
+          detail: "21323"
+        },
+        {
+          name: "name",
+          url: require("../assets/Images/Bowie.png"),
+          detail: "21323"
+        }
+      ],
       playlist: true
     }
   }

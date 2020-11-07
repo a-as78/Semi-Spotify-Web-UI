@@ -4,48 +4,61 @@
           <div class="title"></div>
           <div class="option"></div>
       </div>
-      <div v-for="(item, index) in recentlyPlayed"
-           :key="index"
-           class="body">
-           <app-artists v-if="item.artist"
-                        :urls="item.url"
-                        :names="item.name"
-                        :detail="item.detail"></app-artists>
-           <app-songs v-if="item.playlist"
-                      :names='item.name'
+      <div class="row-flex itmes"
+           v-for="(item, index) in recentlyPlayed"
+           :key="index">
+           <app-artist v-if="item.artist"
+                        :artist="item"
+                        class="item">
+            </app-artist>
+           <app-song v-if="item.playlist"
                       :playlist="true"
-                      :urls='item.url'
-                      :detail="item.likes"></app-songs>
-           <app-songs v-if="item.detail"
-                      :names='item.name'
-                      :urls='item.url'
-                      :detail="item.detail"></app-songs>
+                      :song="item"
+                      class="item">
+            </app-song>
+           <app-song v-if="item.song"
+                      :song="item"
+                      class="item">
+            </app-song>
       </div>
       
   </div>
 </template>
 
 <script>
-import AppArtists from '../components/artists.vue'
-import AppSongs from '../components/songs.vue'
+import AppArtist from '../components/artist.vue'
+import AppSong from '../components/song.vue'
 
 export default {
   components: {
-    AppSongs,
-    AppArtists
+    AppSong,
+    AppArtist
   },
   props: [
     'recentlyPlayed'
   ],
   created(){
-    console.log("recently played" , this.recentlyPlayed)
+    // console.log("recently played" , this.recentlyPlayed)
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.body{
+  width: 100%;
+  justify-content: space-between;
+}
 .recently-played{
+  width: 100%;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+}
+.items{
+  justify-content: space-between;
+}
+.item{
+  min-width: 100px;
+  padding: 0px 10px;
 }
 </style>

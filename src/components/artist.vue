@@ -1,30 +1,27 @@
 <template>
-  <div class="artists column-flex">
-    <component-header v-if="header"
-                      :title="title"
-                      :viewAll="false"></component-header>
-    <div class="artists-body row-flex">
-      <div class="artist column-flex"
-           v-for="(artist, index) in artists" 
-           :key="index">
-           <app-artist :artist="artist"></app-artist>
+  <div class="artist column-flex">
+        <div class="artist-pic-body">
+          <img class="artist-pic"
+             :src= artist.url 
+             alt="cover">
+        </div>
+        <div class="artist-name">{{artist.name}}</div>
+        <div class="artist-likes row-flex">
+          <div class="artist-like-icon">
+            <img src="../assets/Icons/heart.svg" alt="like">
+          </div>
+          <div class="artist-like-number">{{artist.detail}}</div>
+        </div>
       </div>
-    </div>
-  </div>
 </template>
 
 <script>
-import ComponentHeader from './componentHeader.vue';
-import AppArtist from './artist.vue';
 
 export default {
   components: {
-    ComponentHeader,
-    AppArtist
   },
   props: {
-    header: Boolean,
-    artists: Array
+    artist: Object
   },
   data(){
     return{
@@ -32,7 +29,7 @@ export default {
     }
   },
   created(){
-    console.log(this.artists)
+    console.log(this.artist)
   }
 }
 </script>
@@ -50,17 +47,6 @@ export default {
 }
 .artists-body{
   justify-content: space-between;
-  overflow-y: hidden;
-  overflow-x: scroll;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
-/* Hide scrollbar for Chrome, Safari and Opera */
-.artists-body::-webkit-scrollbar {
-  display: none;
-}
-.artist{
-  min-width: 100px;
 }
 .next, .previous{
   margin: 5px;

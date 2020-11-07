@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="body">
     <div class="header">
       <div class="title"></div>
       <div class="more-options"></div>
@@ -69,6 +69,7 @@ export default {
 .section{
   position: relative;
   margin: 20px;
+  width: 30%;
 }
 .cover{
   width: 370px;
@@ -137,4 +138,25 @@ export default {
   justify-content: center;
   align-items: center;
 }
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  
+}
+
 </style>
