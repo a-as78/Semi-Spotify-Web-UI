@@ -57,7 +57,7 @@ export default {
   border-radius: 8px;
   justify-content: space-between;
   align-items: center;
-  backdrop-filter: blur(30px);
+  backdrop-filter: blur(50px);
 }
 .player-song-name{
   color: white;
@@ -123,8 +123,10 @@ export default {
 }
 
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-  
+@media (min-width: 768px) and  (max-width: 992px){
+  .song-feature{
+    display: none !important;
+  }
 }
 
 /* Large devices (desktops, 992px and up) */

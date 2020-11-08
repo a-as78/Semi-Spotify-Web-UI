@@ -1,5 +1,7 @@
 <template>
-<div>
+<div class="header">
+  <ham-but class="ham-but"
+           :user="userName"></ham-but>
   <div class="top-navigation row-reverse-flex">
     <div class="blur-cover"></div>
     <div class="row-reverse-flex">
@@ -11,6 +13,9 @@
         <div class="profile-icon">
           <img src="../assets/Icons/Profile.svg">
         </div>
+      </div>
+      <div class="phone-logo">
+        <img src="../assets/Full Logo.svg">
       </div>
       <div class="search">
         <input type="search"
@@ -41,32 +46,50 @@
 </template>
 
 <script>
+import HamBut from './hamburgerButton.vue';
 
 export default {
   components: {
+    HamBut
+  },
+  data(){
+    return{
+      userName: 'John Doe'
+    }
   }
 }
 </script>
 
 <style>
-/* body {
-    background-attachment: fixed;
-} */
+.phone-logo{
+  display: none !important;
+  width: 50px;
+  height: 50px;
+}
+.header{
+  position: relative;
+}
+.ham-but{
+  display: none !important;
+  position: absolute;
+  top: -20px;
+  left: 0px;
+}
+.phone-logo{
+  display: block;
+}
 .top-navigation{
   height: 50px;
-  /* background-color: #161A1A; */
-  /* filter: blur(5px); */
   padding: 22px 40px;
   position: relative;
 }
 .blur-cover{
   width: 100%;
   height: 100%;
-  filter: blur(5px);
   position: absolute;
   top: 0px;
   right: 0px;
-  backdrop-filter: blur(30px);
+  backdrop-filter: blur(50px);
   z-index: -1;
 }
 .dashboard{
@@ -116,9 +139,14 @@ input[name="search-box"]::placeholder {
 }
 
 @media (max-width: 576px) {
-  .tabs{
-    font-size: 15px;
-    margin-left: 10px;
+  .ham-but{
+    display: block !important;
+  }
+  .phone-logo{
+    display: block !important;
+  }
+  .tabs, .dashboard, .logo{
+    display: none !important;
   }
   input[name="search-box"]::placeholder {
     font-size: 13px;
@@ -135,10 +163,15 @@ input[name="search-box"]::placeholder {
 }
 
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-  .tabs{
-    font-size: 15px;
-    margin-left: 10px;
+@media (min-width: 576px) and (max-width: 768px){
+  .ham-but{
+    display: block !important;
+  }
+  .phone-logo{
+    display: block !important;
+  }
+  .tabs, .dashboard, .logo{
+    display: none !important;
   }
   input[name="search-box"]::placeholder {
     font-size: 13px;
@@ -155,7 +188,7 @@ input[name="search-box"]::placeholder {
 }
 
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 992px) {
   .tabs{
     font-size: 15px;
     margin-left: 10px;
@@ -175,7 +208,7 @@ input[name="search-box"]::placeholder {
 }
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
+@media (min-width: 992px)  and (max-width: 1200px){
   .tabs{
     font-size: 15px;
   }
