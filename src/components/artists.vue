@@ -7,7 +7,7 @@
                       @previous="scrollRight"></component-header>
     <div class="artists-body row-flex"
          ref="artistBox">
-      <app-artist class="artist column-flex"
+      <app-artist class="column-flex"
                   v-for="(artist, index) in artists" 
                   :key="index"
                   :artist="artist">
@@ -81,9 +81,9 @@ export default {
 .artists-body::-webkit-scrollbar {
   display: none;
 }
-.artist{
-  min-width: 100px;
-}
+// .artist{
+//   min-width: 100px;
+// }
 .next, .previous{
   margin: 5px;
 }
@@ -113,5 +113,33 @@ width: 100%;
 .artist-like-number{
   font-size: 13px;
   color: #99999F;
+}
+
+@media (max-width: 576px) {
+  
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  
+}
+
+@media (min-width: 1600px){
+  
 }
 </style>

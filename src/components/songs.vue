@@ -9,7 +9,7 @@
          :class="{'songs-body': doScroll , 'songs-body-viewALl': viewAll}"
          ref="songBox">
       <div class="song column-flex"
-            v-for="(song, index) in songs" 
+            v-for="(song, index) in items" 
            :key="index">
            <app-song :song="song"
                      :playlist="playlist"></app-song>
@@ -39,7 +39,8 @@ export default {
     return{
       // title: "New Releases for You"
       doScroll: !this.viewAll,
-      pose: 0
+      pose: 0,
+      items: this.songs
     }
   },
   methods: {
@@ -58,7 +59,26 @@ export default {
         left: this.pose,
         behavior: 'smooth'
         });
+    },
+    reportWindowSize() {
+      if(this.viewAll){
+        if(window.innerWidth > 1200 ){
+          this.items = this.songs  
+        }else if(window.innerWidth > 992 ){
+          this.items = this.songs.slice(0 , 5)  
+        }else if(window.innerWidth > 768 ){
+          this.items = this.songs.slice(0 , 4)  
+        }else if(window.innerWidth > 567 ){
+          this.items = this.songs.slice(0 , 3)  
+        }else if(window.innerWidth < 567 ){
+          this.items = this.songs.slice(0 , 2)  
+        }
+      }
     }
+  },
+  mounted(){
+    this.reportWindowSize();
+    window.addEventListener("resize", this.reportWindowSize);
   }
 }
 </script>
@@ -110,5 +130,33 @@ export default {
   color: #99999F;
   font-size: 13px;
   padding-top: 3px;
+}
+
+@media (max-width: 576px) {
+  
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  
+}
+
+@media (min-width: 1600px){
+  
 }
 </style>

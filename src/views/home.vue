@@ -236,4 +236,47 @@ home-flow{
 app-categories{
   width: 100%;
 }
+
+@media (max-width: 576px) {
+  .home-body{
+    width: calc(100% - 80px);
+    padding: 0px 40px;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .home-body{
+    width: calc(100% - 110px);
+    padding: 0px 55px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .home-body{
+    width: calc(100% - 110px);
+    padding: 0px 55px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .home-body{
+    width: calc(100% - 140px);
+    padding: 0px 70px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .home-body{
+    width: calc(100% - 200px);
+    padding: 0px 100px;
+  }
+}
+
+@media (min-width: 1600px){
+  
+}
 </style>

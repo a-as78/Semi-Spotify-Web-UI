@@ -4,7 +4,7 @@
          :src= song.url 
           alt="cover">
     <div class="song-name">{{song.name}}</div>
-    <div class="row-flex">
+    <div class="row-flex center">
       <div v-if="playlist"
            class="artist-like-icon">
         <img src="../assets/Icons/heart.svg" alt="like">
@@ -64,5 +64,59 @@ export default {
   color: #99999F;
   font-size: 13px;
   padding-top: 3px;
+}
+.artist-like-icon{
+  padding-right: 5px;
+}
+
+@media (max-width: 576px) {
+  .song{
+    min-width: 110px;
+  }
+  .song-name{
+    font-size: 11px;
+  }
+  .song-artist{
+    font-size: 10px;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .song{
+    min-width: 110px;
+  }
+  .song-name{
+    font-size: 11px;
+  }
+  .song-artist{
+    font-size: 10px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .song{
+    min-width: 125px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .song-name{
+    font-size: 12px;
+  }
+  .song-artist{
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 1600px){
+  
 }
 </style>

@@ -5,7 +5,7 @@
       <div class="more-options"></div>
     </div>
     <div class="main">
-      <div class="section">
+      <div class="section remove-section1">
         <div class="cover cover1"></div>
         <div class="image-section">
           <img class="image"
@@ -21,7 +21,7 @@
           <div class="flow-footer">Based on your listening history</div>
         </div>
       </div>
-      <div class="section">
+      <div class="section remove-section2">
         <div class="cover cover2"></div>
         <img class="image"
              src="../assets/Images/Flow cover2.png" alt="cover2">
@@ -35,7 +35,7 @@
           <div class="flow-footer">Select multiple genres and moods to create the perfect soundtrack</div>
         </div>
       </div>
-      <div class="section">
+      <div class="section remove-section3">
         <div class="cover cover3"></div>
         <img class="image"
              src="../assets/Images/Flow cover3.png" alt="cover3">
@@ -77,7 +77,6 @@ export default {
   width: 30%;
 }
 .cover{
-  /* width: 370px; */
   width: 100%;
   height: 250px;
   background-repeat: no-repeat;
@@ -106,8 +105,10 @@ export default {
 }
 .flow{
   width: 40%;
+  height: 90px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   position: absolute;
   bottom: 50px;
@@ -127,7 +128,7 @@ export default {
   align-content: center;
   font-size: 12px;
   text-align: center;
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
 }
 .flow-footer{
   font-size: 10px;
@@ -149,24 +150,187 @@ export default {
   align-items: center;
 }
 
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
+@media only screen and (max-width: 576px) {
+  .section{
+    width: 246px;
+  }
+  .flow-body{
+    right: -15px;
+  }
+  .cover{
+    height: 170px;
+  }
+  .image{
+    height: 85px;
+    width: 85px;
+    bottom: 40px;
+    left: 30px;
+  }
+  .flow-icon{
+    width: 15px;
+    height: 15px;
+    left: 55px;
+    bottom: 22px;
+  }
+  .flow{
+    bottom: 18px;
+  }
+  .flow-info{
+    margin-top: 10px;
+    font-size: 10px;
+  }
+  .flow-footer{
+    font-size: 9px;
+  }
+  .remove-section2 , .remove-section3{
+    display: none;
+  }
+}
 
+/* Small devices (landscape phones, 576px and up) */
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+  .section{
+    width: 350px;
+  }
+  .flow-body{
+    right: -31px;
+  }
+  .cover{
+    height: 230px;
+  }
+  .image{
+    height: 120px;
+    width: 120px;
+    bottom: 55px;
+    left: 40px;
+  }
+  .flow-icon{
+    width: 25px;
+    height: 25px;
+    left: 80px;
+    bottom: 35px;
+  }
+  .flow{
+    bottom: 20px;
+  }
+  .flow{
+    height: 110px;
+  }
+  .flow-info{
+    margin-top: 10px;
+  }
+  .remove-section2, .remove-section3{
+    display: none;
+  }
 }
 
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .section{
+    width: 300px;
+  }
+  .flow-body{
+    right: -31px;
+  }
+  .cover{
+    height: 187px;
+  }
+  .image{
+    height: 100px;
+    width: 100px;
+    bottom: 45px;
+    left: 40px;
+  }
+  .flow-icon{
+    width: 20px;
+    height: 20px;
+    left: 70px;
+    bottom: 20px;
+  }
+  .flow{
+    bottom: 20px;
+  }
+  .flow-info{
+    margin-top: 10px;
+  }
+  .remove-section2{
+    display: none;
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .section{
+    width: 246px;
+  }
+  .flow-body{
+    right: -15px;
+  }
+  .cover{
+    height: 170px;
+  }
+  .image{
+    height: 85px;
+    width: 85px;
+    bottom: 40px;
+    left: 30px;
+  }
+  .flow-icon{
+    width: 15px;
+    height: 15px;
+    left: 55px;
+    bottom: 22px;
+  }
+  .flow{
+    bottom: 18px;
+  }
+  .flow-info{
+    margin-top: 10px;
+    font-size: 10px;
+  }
+  .flow-footer{
+    font-size: 9px;
+  }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-  
+@media only screen and (min-width: 1200px) and (max-width: 1600px){
+  .section{
+    width: 300px;
+  }
+  .flow-body{
+    right: -31px;
+  }
+  .cover{
+    height: 187px;
+  }
+  .image{
+    height: 100px;
+    width: 100px;
+    bottom: 45px;
+    left: 40px;
+  }
+  .flow-icon{
+    width: 20px;
+    height: 20px;
+    left: 70px;
+    bottom: 20px;
+  }
+  .flow{
+    bottom: 20px;
+  }
+  .flow-info{
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: 1600px){
+  .flow-body{
+    right: -40px;
+  }
+  .section{
+    width: 396px;
+  }
 }
 
 </style>

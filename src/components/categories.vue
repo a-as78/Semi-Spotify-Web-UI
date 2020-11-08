@@ -25,10 +25,35 @@ export default {
         require("../assets/Images/rock.svg"),
         require("../assets/Images/DANCE - ELECTRO.svg"),
         require("../assets/Images/Country.svg")
+      ],
+      urls: [
+        require("../assets/Images/HIP - HOP.svg"),
+        require("../assets/Images/Indie.svg"),
+        require("../assets/Images/POP.svg"),
+        require("../assets/Images/rock.svg"),
+        require("../assets/Images/DANCE - ELECTRO.svg"),
+        require("../assets/Images/Country.svg")
       ]
     }
   },
-  created(){
+  methods: {
+    reportWindowSize() {
+      if(window.innerWidth > 1200){
+        this.categoriesUrl = this.urls
+      }else if(window.innerWidth > 992 ){
+        this.categoriesUrl = this.urls.slice(0 , 5)  
+      }else if(window.innerWidth > 768 ){
+        this.categoriesUrl = this.urls.slice(0 , 4)  
+      }else if(window.innerWidth > 567 ){
+        this.categoriesUrl = this.urls.slice(0 , 3)  
+      }else if(window.innerWidth < 567 ){
+        this.categoriesUrl = this.urls.slice(0 , 2)  
+      }
+    }
+  },
+  mounted(){
+    this.reportWindowSize();
+    window.addEventListener("resize", this.reportWindowSize);
   }
 }
 </script>
@@ -46,5 +71,33 @@ export default {
 }
 .category-cover{
   width: 100%;
+}
+
+@media (max-width: 576px) {
+  
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  
+}
+
+@media (min-width: 1600px){
+  
 }
 </style>

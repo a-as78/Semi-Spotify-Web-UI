@@ -52,11 +52,12 @@ export default {
 .player-body{
   width: 90%;
   max-width: 1860px;
-  background-color: #3A3A3D;
+  background-color: #3A3A3DB3;
   padding: 10px;
   border-radius: 8px;
   justify-content: space-between;
   align-items: center;
+  backdrop-filter: blur(30px);
 }
 .player-song-name{
   color: white;
@@ -110,5 +111,33 @@ export default {
 .settings{
   display: flex;
   justify-content: flex-end;
+}
+
+@media (max-width: 576px) {
+  
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  
+}
+
+@media (min-width: 1600px){
+  
 }
 </style>

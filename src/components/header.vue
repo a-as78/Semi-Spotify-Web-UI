@@ -1,6 +1,7 @@
 <template>
 <div>
   <div class="top-navigation row-reverse-flex">
+    <div class="blur-cover"></div>
     <div class="row-reverse-flex">
       <div class="dashboard row-reverse-flex">
         <div class="dashboard-arrow">
@@ -48,11 +49,25 @@ export default {
 </script>
 
 <style>
+/* body {
+    background-attachment: fixed;
+} */
 .top-navigation{
   height: 50px;
-  background-color: #161A1A;
-  filter: blur(3);
+  /* background-color: #161A1A; */
+  /* filter: blur(5px); */
   padding: 22px 40px;
+  position: relative;
+}
+.blur-cover{
+  width: 100%;
+  height: 100%;
+  filter: blur(5px);
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  backdrop-filter: blur(30px);
+  z-index: -1;
 }
 .dashboard{
   margin-right: 49px;
@@ -98,5 +113,86 @@ input[name="search-box"]::placeholder {
   background: linear-gradient(to right, #2D9BEF, #9B2DEF);
   padding: 1px;
   border-radius: 40px;
+}
+
+@media (max-width: 576px) {
+  .tabs{
+    font-size: 15px;
+    margin-left: 10px;
+  }
+  input[name="search-box"]::placeholder {
+    font-size: 13px;
+  }
+  .top-navigation{
+    height: 40px;
+  }
+  .dashboard {
+    margin-right: 5px;
+  }
+  input[name="search-box"] {
+    width: 80px;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .tabs{
+    font-size: 15px;
+    margin-left: 10px;
+  }
+  input[name="search-box"]::placeholder {
+    font-size: 13px;
+  }
+  .top-navigation{
+    height: 40px;
+  }
+  .dashboard {
+    margin-right: 5px;
+  }
+  input[name="search-box"] {
+    width: 80px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .tabs{
+    font-size: 15px;
+    margin-left: 10px;
+  }
+  input[name="search-box"]::placeholder {
+    font-size: 13px;
+  }
+  .top-navigation{
+    height: 40px;
+  }
+  .dashboard {
+    margin-right: 5px;
+  }
+  input[name="search-box"] {
+    width: 80px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .tabs{
+    font-size: 15px;
+  }
+  input[name="search-box"]::placeholder {
+    font-size: 13px;
+  }
+  .top-navigation{
+    height: 40px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  
+}
+
+@media (min-width: 1600px){
+  
 }
 </style>
