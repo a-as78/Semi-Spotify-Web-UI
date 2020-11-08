@@ -25,6 +25,7 @@ body{
   background-color: #161A1A;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 .header{
   width: 100%;
@@ -40,6 +41,7 @@ body{
   right: 0px;
   justify-content: center;
   align-items: center;
+  z-index: 3;
 }
 .body{
   padding-top: 90px !important;

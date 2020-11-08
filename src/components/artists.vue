@@ -2,13 +2,16 @@
   <div class="artists column-flex">
     <component-header v-if="header"
                       :title="title"
-                      :viewAll="false"></component-header>
-    <div class="artists-body row-flex">
-      <div class="artist column-flex"
-           v-for="(artist, index) in artists" 
-           :key="index">
-           <app-artist :artist="artist"></app-artist>
-      </div>
+                      :viewAll="false"
+                      @next="scrollLeft"
+                      @previous="scrollRight"></component-header>
+    <div class="artists-body row-flex"
+         ref="artistBox">
+      <app-artist class="artist column-flex"
+                  v-for="(artist, index) in artists" 
+                  :key="index"
+                  :artist="artist">
+      </app-artist>
     </div>
   </div>
 </template>
@@ -28,11 +31,30 @@ export default {
   },
   data(){
     return{
-      title: "You might like these artists"
+      title: "You might like these artists",
+      pose : 0
     }
   },
   created(){
-    console.log(this.artists)
+    console.log(this.$refs.artistBox)
+  },
+  methods: {
+    scrollLeft(){
+      this.pose+=50
+      this.$refs.artistBox.scroll({
+        top: 0,
+        left: this.pose,
+        behavior: 'smooth'
+        });
+    },
+    scrollRight(){
+      this.pose-=50
+      this.$refs.artistBox.scroll({
+        top: 0,
+        left: this.pose,
+        behavior: 'smooth'
+        });
+    }
   }
 }
 </script>

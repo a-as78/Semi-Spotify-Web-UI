@@ -6,10 +6,12 @@
            class="view-all">VIEW ALL</div>
       <div v-else
            class="header-options row-reverse-flex">
-        <div class="next">
+        <div class="next"
+             @click="next">
           <img src="../assets/Icons/Path 434.svg" alt="next">
         </div>
-        <div class="previous">
+        <div class="previous"
+             @click="previous">
           <img src="../assets/Icons/Path 759.svg" alt="next">
         </div>
       </div>
@@ -27,6 +29,14 @@ export default {
   ],
   data(){
     return{
+    }
+  },
+  methods: {
+    next(){
+      this.$emit('next')
+    },
+    previous(){
+      this.$emit('previous')
     }
   }
 }

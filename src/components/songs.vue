@@ -2,8 +2,12 @@
   <div class="songs column-flex">
     <component-header v-if="header"
                       :title="title"
-                      :viewAll="viewAll"></component-header>
-    <div class="songs-body row-flex">
+                      :viewAll="viewAll"
+                      @next="scrollLeft"
+                      @previous="scrollRight"></component-header>
+    <div class="row-flex"
+         :class="{'songs-body': doScroll , 'songs-body-viewALl': viewAll}"
+         ref="songBox">
       <div class="song column-flex"
             v-for="(song, index) in songs" 
            :key="index">
@@ -34,6 +38,26 @@ export default {
   data(){
     return{
       // title: "New Releases for You"
+      doScroll: !this.viewAll,
+      pose: 0
+    }
+  },
+  methods: {
+    scrollLeft(){
+      this.pose+=50
+      this.$refs.songBox.scroll({
+        top: 0,
+        left: this.pose,
+        behavior: 'smooth'
+        });
+    },
+    scrollRight(){
+      this.pose -= 50
+      this.$refs.songBox.scroll({
+        top: 0,
+        left: this.pose,
+        behavior: 'smooth'
+        });
     }
   }
 }
@@ -61,6 +85,9 @@ export default {
 /* Hide scrollbar for Chrome, Safari and Opera */
 .songs-body::-webkit-scrollbar {
   display: none;
+}
+.songs-body-viewALl{
+  overflow: hidden;
 }
 .view-all{
   color: #D5D5D5;

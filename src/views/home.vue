@@ -217,6 +217,7 @@ export default {
 
 <style lang="scss" scoped>
 .home-body{
+  width: calc(100% - 280px);
   height: 100%;
   background-color: #161A1A;
   padding: 0px 140px;

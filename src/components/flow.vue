@@ -7,13 +7,15 @@
     <div class="main">
       <div class="section">
         <div class="cover cover1"></div>
-        <img class="image"
-             src="../assets/Images/Flow cover1.png" alt="cover1">
+        <div class="image-section">
+          <img class="image"
+              src="../assets/Images/Flow cover1.png" alt="cover1">
+          <div class="flow-icon">
+            <img src="../assets/Images/Path 368.svg" alt="play">
+          </div>
+        </div>
         <img class="flow-body"
              src="../assets/Images/Flow Body.svg" alt="filter">
-        <div class="flow-icon">
-          <img src="../assets/Images/Path 368.svg" alt="play">
-        </div>
         <div class="flow">
           <div class="flow-info">Your Personal Soundtrack</div>
           <div class="flow-footer">Based on your listening history</div>
@@ -60,6 +62,9 @@ export default {
 </script>
 
 <style>
+.body{
+  width: 100%;
+}
 .main{
   display: flex;
   flex-direction: row;
@@ -72,7 +77,8 @@ export default {
   width: 30%;
 }
 .cover{
-  width: 370px;
+  /* width: 370px; */
+  width: 100%;
   height: 250px;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -95,6 +101,9 @@ export default {
   left: 50px;
   z-index: 1;
 }
+.image-section{
+  position: relative;
+}
 .flow{
   width: 40%;
   display: flex;
@@ -105,10 +114,11 @@ export default {
   right: 27px;
 }
 .flow-body{
-  width: 370px;
-  height: 250px;
+  /* width: 370px; */
+  width: 100%;
+  height: 100%;
   position: absolute;
-  right: -27px;
+  right: 0px;
   top: 0px;
 }
 .flow-info{
