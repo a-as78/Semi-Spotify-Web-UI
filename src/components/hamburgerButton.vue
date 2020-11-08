@@ -35,7 +35,7 @@ export default {
 
 body
 {
-  height: 100%;
+  // height: 100%;
   margin: 0;
   padding: 0;
   background: #232323;
@@ -140,6 +140,7 @@ body
 
 #menu
 {
+  height: 100vh;
   position: absolute;
   width: 300px;
   margin: -100px 0 0 -50px;

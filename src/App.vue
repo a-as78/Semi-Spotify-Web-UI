@@ -1,5 +1,7 @@
 <template>
   <div class="column-flex">
+    <ham-but class="ham-but"
+           :user="userName"></ham-but>
     <app-header class="header"></app-header>
     <router-view class="body"></router-view>
     <div class="player row-flex">
@@ -11,16 +13,32 @@
 <script>
 import AppHeader from './components/header.vue';
 import AppPlayer from './components/player.vue';
+import HamBut from './components/hamburgerButton.vue';
+
 
 export default {
   components: {
     AppHeader,
-    AppPlayer
+    AppPlayer,
+        HamBut
+
+  },
+  data(){
+    return {
+            userName: 'John Doe'
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.ham-but{
+  display: none !important;
+  position: absolute;
+  top: -20px;
+  left: 0px;
+  z-index: 100;
+}
 body{
   background-color: #161A1A;
   justify-content: center;
@@ -46,5 +64,18 @@ body{
 .body{
   padding-top: 90px !important;
   padding-bottom: 90px !important;
+}
+
+@media (max-width: 576px) {
+  .ham-but{
+    display: block !important;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 768px){
+  .ham-but{
+    display: block !important;
+  }
 }
 </style>

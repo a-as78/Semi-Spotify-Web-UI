@@ -1,7 +1,7 @@
 <template>
 <div class="header">
-  <ham-but class="ham-but"
-           :user="userName"></ham-but>
+  <!-- <ham-but class="ham-but"
+           :user="userName"></ham-but> -->
   <div class="top-navigation row-reverse-flex">
     <div class="blur-cover"></div>
     <div class="row-reverse-flex">
@@ -46,15 +46,15 @@
 </template>
 
 <script>
-import HamBut from './hamburgerButton.vue';
+// import HamBut from './hamburgerButton.vue';
 
 export default {
   components: {
-    HamBut
+    // HamBut
   },
   data(){
     return{
-      userName: 'John Doe'
+      // userName: 'John Doe'
     }
   }
 }
@@ -69,12 +69,13 @@ export default {
 .header{
   position: relative;
 }
-.ham-but{
+/* .ham-but{
   display: none !important;
   position: absolute;
   top: -20px;
   left: 0px;
-}
+  z-index: 100;
+} */
 .phone-logo{
   display: block;
 }
@@ -139,9 +140,9 @@ input[name="search-box"]::placeholder {
 }
 
 @media (max-width: 576px) {
-  .ham-but{
+  /* .ham-but{
     display: block !important;
-  }
+  } */
   .phone-logo{
     display: block !important;
   }
