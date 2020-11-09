@@ -82,12 +82,13 @@ export default {
   width: max-content;
   justify-content: center;
   align-items: center;
+  padding-top: 10px;
 }
 .player-playlist-check-icon , .player-like-icon{
   padding: 12px;
 }
 .player-buttons{
-  width: 80%;
+  width: 60%;
   padding: 0px 10%;
   padding-bottom: 20px;
   justify-content: space-between;
@@ -96,7 +97,7 @@ export default {
 .player-bar{
   height: 5px;
   border-bottom: 1px solid white;
-  width: 300px;
+  width: 400px;
 }
 .player-playlist, .player-volume{
   padding: 0px 12px;

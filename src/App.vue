@@ -33,6 +33,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+// @import '@/assets/styles/style.scss';
+// @import '@/assets/styles/rest.scss';
+
 .app-body{
   position: relative !important;
 }
@@ -50,6 +53,7 @@ body{
   width: 100%;
 }
 .header{
+  position: relative;
   width: 100%;
   position: fixed;
   top: 0px;
@@ -66,8 +70,9 @@ body{
   z-index: 3;
 }
 .body{
+  // width: 100%;
   padding-top: 90px !important;
-  padding-bottom: 90px !important;
+  padding-bottom: 100px !important;
 }
 
 @media (max-width: 576px) {

@@ -63,10 +63,11 @@ export default {
 .song-artist{
   color: #99999F;
   font-size: 13px;
-  padding-top: 3px;
+  padding-top: 5px;
 }
 .artist-like-icon{
   padding-right: 5px;
+  padding-top: 2px;
 }
 
 @media (max-width: 576px) {

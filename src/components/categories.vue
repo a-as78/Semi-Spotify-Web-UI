@@ -58,7 +58,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 .categories{
   justify-content: space-between;
   align-items: center;

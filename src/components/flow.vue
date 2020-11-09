@@ -11,7 +11,7 @@
           <img class="image"
               src="../assets/Images/Flow cover1.png" alt="cover1">
           <div class="flow-icon">
-            <img class="button" src="../assets/Images/Path 368.svg" alt="play">
+            <img class="play-button" src="../assets/Images/Path 368.svg" alt="play">
           </div>
         </div>
         <img class="flow-body"
@@ -61,7 +61,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 .body{
   width: 100%;
 }
@@ -136,7 +136,7 @@ export default {
   color: #D5D5D5;
 }
 .flow-icon{
-  background-color: #1C1C1C;
+  background-color: #1C1C1CB3;
   position: absolute;
   bottom: 41px;
   left: 100px;
@@ -148,6 +148,13 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.button{
+  width: 23px;
+}
+.play-button{
+  width: 18px;
+  padding-left: 2px;
 }
 
 @media only screen and (max-width: 576px) {

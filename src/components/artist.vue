@@ -51,7 +51,7 @@ export default {
   margin: 5px;
 }
 .artist-like-icon{
-  padding: 0px 5px;
+  padding: 2px 5px 0px;
 }
 .artist-pic-body{
   border-radius: 50%;
@@ -79,6 +79,7 @@ width: 100%;
 .artist-like-number{
   font-size: 13px;
   color: #99999F;
+  padding-top: 5px;
 }
 
 @media only screen and (max-width: 576px){

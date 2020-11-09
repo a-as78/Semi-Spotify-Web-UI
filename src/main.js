@@ -2,8 +2,8 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router.js'
 
-require('@/assets/styles/style.css')
-require('@/assets/styles/deleting default styles.css')
+require('@/assets/styles/style.scss')
+require('@/assets/styles/rest.scss')
 
 Vue.config.productionTip = false
 

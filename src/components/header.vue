@@ -60,7 +60,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 .phone-logo{
   display: none !important;
   width: 50px;
