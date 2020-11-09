@@ -2,7 +2,7 @@
   <div class="player-body row-flex">
     <div class="song row-flex">
       <div class="player-song-cover">
-        <img src="../assets/Images/Image 59.png" alt="cover">
+        <img class="song-cover" src="../assets/Images/Image 59.png" alt="cover">
       </div>
       <div class="song-detail column-flex">
         <div class="player-song-name">Rebel Rebel</div>
@@ -15,13 +15,13 @@
              src="../assets/Icons/Alredy in Playlist.svg" alt="Already in Playlist">
       </div>
     </div>
-    <div class="player-section">
+    <div class="player-section clumn-flex">
       <div class="player-buttons row-flex">
-        <img src="../assets/Icons/Shuffle18.svg" alt="shuffle">
-        <img src="../assets/Icons/prev.svg" alt="shuffle">
-        <img src="../assets/Icons/Pause.svg" alt="shuffle">
-        <img src="../assets/Icons/next.svg" alt="shuffle">
-        <img src="../assets/Icons/Repeat 18.svg" alt="shuffle">
+        <img class="button" src="../assets/Icons/Shuffle18.svg" alt="shuffle">
+        <img class="button" src="../assets/Icons/prev.svg" alt="shuffle">
+        <img class="button" src="../assets/Icons/Pause.svg" alt="shuffle">
+        <img class="button" src="../assets/Icons/next.svg" alt="shuffle">
+        <img class="button" src="../assets/Icons/Repeat 18.svg" alt="shuffle">
       </div>
       <div class="player-duration-bar row-flex">
         <div class="played-duration">2:00</div>
@@ -48,7 +48,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 .player-body{
   width: 90%;
   max-width: 1860px;
@@ -114,12 +114,88 @@ export default {
 }
 
 @media (max-width: 576px) {
-  
+  .song-feature{
+    display: none !important;
+  }
+  .player-body{
+    width: 100%;
+    /* padding: 0px; */
+    margin-top: 10px;
+  }
+  .player-bar{
+    width: 120px;
+  }
+  .settings{
+    display: none !important;
+  }
+  .player-buttons{
+    padding-bottom: 10px;
+  }
+  .button{
+    width: 15px;
+  }
+  .player-duration-bar{
+    font-size: 13px;
+  }
+  .song-cover{
+    width: 45px;
+  }
+  .player-song-name{
+    font-size: 13px;
+    width: 100px;
+  }
+  .player-song-artist{
+    font-size: 11px;
+  }
+  .song , .settings{
+    width: 0px !important;
+  }
+  .player-body{
+    border-radius: 0px;
+  }
 }
 
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-  
+@media (min-width: 576px) and (max-width: 768px) {
+  .song-feature{
+    display: none !important;
+  }
+  .player-body{
+    width: 100%;
+    /* padding: 0px; */
+    margin-top: 10px;
+  }
+  .player-bar{
+    width: 250px;
+  }
+  .settings{
+    display: none !important;
+  }
+  .player-buttons{
+    padding-bottom: 10px;
+  }
+  .button{
+    width: 15px;
+  }
+  .player-duration-bar{
+    font-size: 13px;
+  }
+  .song-cover{
+    width: 45px;
+  }
+  .player-song-name{
+    font-size: 15px;
+    width: 100px;
+  }
+  .player-song-artist{
+    font-size: 13px;
+  }
+  .song , .settings{
+    width: 0px !important;
+  }
+  .player-body{
+    border-radius: 0px;
+  }
 }
 
 /* Medium devices (tablets, 768px and up) */

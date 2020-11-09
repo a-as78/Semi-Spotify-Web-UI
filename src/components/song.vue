@@ -71,7 +71,8 @@ export default {
 
 @media (max-width: 576px) {
   .song{
-    min-width: 110px;
+    min-width: 95px;
+    max-width: 145px;
   }
   .song-name{
     font-size: 11px;

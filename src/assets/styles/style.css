@@ -16,3 +16,10 @@
   align-items: center;
   justify-content: center;
 }
+/* @font-face {
+  font-family: LatoFont;
+  src: url('../Lato/');
+}
+*{
+  font-family: LatoFont;
+} */

@@ -1,23 +1,31 @@
 <template>
   <div class="column-flex">
     <nav role="navigation">
-    <div id="menuToggle">
-        <input type="checkbox" />
-        <span></span>
-        <span></span>
-        <span></span>
-        <ul id="menu">
-        <a href="#"><li class="row-flex center user">
-          <div class="profile-icon">
-          <img src="../assets/Icons/Profile.svg">
-        </div>
-        {{user}}
-        </li></a>
-        <a href="#"><li>Home</li></a>
-        <a href="#"><li>Library</li></a>
-        <a href="#"><li>Browse</li></a>
-        </ul>
-    </div>
+      <div id="menuToggle">
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+          <ul id="menu">
+            <a href="#">
+              <li class="row-flex center user">
+              <div class="profile-icon">
+                <img src="../assets/Icons/Profile.svg">
+              </div>
+            {{user}}
+            </li>
+            </a>
+            <a href="#">
+              <li>Home</li>
+            </a>
+            <a href="#">
+              <li>Library</li>
+            </a>
+            <a href="#">
+              <li>Browse</li>
+            </a>
+          </ul>
+      </div>
     </nav>
   </div>
 </template>
@@ -146,7 +154,6 @@ body
   margin: -100px 0 0 -50px;
   padding: 50px;
   padding-top: 125px;
-  
   background: #edededB3;
   backdrop-filter: blur(5px);
   list-style-type: none;

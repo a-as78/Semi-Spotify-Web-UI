@@ -239,8 +239,8 @@ app-categories{
 
 @media (max-width: 576px) {
   .home-body{
-    width: calc(100% - 80px);
-    padding: 0px 40px;
+    width: calc(100% - 60px);
+    padding: 0px 30px;
   }
 }
 

@@ -133,7 +133,9 @@ export default {
 }
 
 @media (max-width: 576px) {
-  
+  .songs-body-viewALl{
+    justify-content: center;
+  }
 }
 
 /* Small devices (landscape phones, 576px and up) */

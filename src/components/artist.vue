@@ -83,7 +83,8 @@ width: 100%;
 
 @media only screen and (max-width: 576px){
   .artist{
-    min-width: 155px;
+    min-width: 137px;
+    max-width: 185px;
   }
   .artist-name{
     font-size: 11px;

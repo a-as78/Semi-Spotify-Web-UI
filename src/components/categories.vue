@@ -74,7 +74,9 @@ export default {
 }
 
 @media (max-width: 576px) {
-  
+  .category-cover{
+    max-width: 165px;
+  }
 }
 
 /* Small devices (landscape phones, 576px and up) */

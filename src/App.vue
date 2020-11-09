@@ -1,7 +1,8 @@
 <template>
-  <div class="column-flex">
+  <div class="column-flex app-body">
     <ham-but class="ham-but"
-           :user="userName"></ham-but>
+             :user="userName">
+    </ham-but>
     <app-header class="header"></app-header>
     <router-view class="body"></router-view>
     <div class="player row-flex">
@@ -32,9 +33,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.app-body{
+  position: relative !important;
+}
 .ham-but{
   display: none !important;
-  position: absolute;
+  position: absolute !important;
   top: -20px;
   left: 0px;
   z-index: 100;
@@ -70,6 +74,9 @@ body{
   .ham-but{
     display: block !important;
   }
+  // .player{
+  //   width: 100%;
+  // }
 }
 
 /* Small devices (landscape phones, 576px and up) */
