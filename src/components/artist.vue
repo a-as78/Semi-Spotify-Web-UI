@@ -35,9 +35,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.artists{
-  width: 100%;
-  justify-content: space-between;
+.artist{
+  width: 95%;
 }
 .artists-header{
   margin: 10px;
@@ -58,6 +57,7 @@ export default {
   border-radius: 50%;
   margin: 10px;
   margin-bottom: 0px;
+  width: calc(100% - 20px);
 }
 .artist-pic{
 width: 100%;
@@ -135,8 +135,6 @@ width: 100%;
 }
 
 @media only screen and (min-width: 1600px){
-  .artist{
-    min-width: 194px;
-  }
+
 }
 </style>

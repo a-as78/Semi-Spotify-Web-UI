@@ -11,7 +11,7 @@
           <img class="image"
               src="../assets/Images/Flow cover1.png" alt="cover1">
           <div class="flow-icon">
-            <img src="../assets/Images/Path 368.svg" alt="play">
+            <img class="button" src="../assets/Images/Path 368.svg" alt="play">
           </div>
         </div>
         <img class="flow-body"
@@ -28,7 +28,7 @@
         <img class="flow-body"
              src="../assets/Images/Flow Body.svg" alt="filter">
         <div class="flow-icon">
-          <img src="../assets/Images/Group 1104.svg" alt="add">
+          <img class="button" src="../assets/Images/Group 1104.svg" alt="add">
         </div>
         <div class="flow">
           <div class="flow-info">Create your own perfect soundtrack</div>
@@ -42,7 +42,7 @@
         <img class="flow-body"
              src="../assets/Images/Flow Body.svg" alt="filter">
         <div class="flow-icon">
-          <img src="../assets/Images/Group 1104.svg" alt="add">
+          <img class="button" src="../assets/Images/Group 1104.svg" alt="add">
         </div>
         <div class="flow">
           <div class="flow-info">Create your own concert with your favorite singers</div>
@@ -185,6 +185,12 @@ export default {
   .remove-section2 , .remove-section3{
     display: none;
   }
+  .button{
+    width: 15px;
+  }
+  .button{
+    width: 18px;
+  }
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -221,6 +227,9 @@ export default {
   }
   .remove-section2, .remove-section3{
     display: none;
+  }
+  .button{
+    width: 18px;
   }
 }
 

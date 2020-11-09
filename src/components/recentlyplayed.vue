@@ -4,7 +4,7 @@
           <div class="title"></div>
           <div class="option"></div>
       </div>
-      <div class="row-flex itmes"
+      <div class="items row-flex itmes"
            v-for="(item, index) in items"
            :key="index">
            <app-artist v-if="item.artist"
@@ -111,6 +111,8 @@ export default {
 }
 
 @media (min-width: 1600px){
-  
+  .items{
+    width: 16.5%;
+  }
 }
 </style>

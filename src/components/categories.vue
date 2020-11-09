@@ -63,11 +63,12 @@ export default {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 100px;
+  height: fit-content;
   margin: 20px 0px;
 }
 .category{
   margin: 10px;
+  width: 100%;
 }
 .category-cover{
   width: 100%;
@@ -76,6 +77,9 @@ export default {
 @media (max-width: 576px) {
   .category-cover{
     max-width: 165px;
+  }
+  .categories{
+    justify-content: center;
   }
 }
 

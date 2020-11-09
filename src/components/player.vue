@@ -15,18 +15,20 @@
              src="../assets/Icons/Alredy in Playlist.svg" alt="Already in Playlist">
       </div>
     </div>
-    <div class="player-section clumn-flex">
-      <div class="player-buttons row-flex">
-        <img class="button" src="../assets/Icons/Shuffle18.svg" alt="shuffle">
-        <img class="button" src="../assets/Icons/prev.svg" alt="shuffle">
-        <img class="button" src="../assets/Icons/Pause.svg" alt="shuffle">
-        <img class="button" src="../assets/Icons/next.svg" alt="shuffle">
-        <img class="button" src="../assets/Icons/Repeat 18.svg" alt="shuffle">
-      </div>
-      <div class="player-duration-bar row-flex">
-        <div class="played-duration">2:00</div>
-        <div class="player-bar"></div>
-        <div class="player-song-duration">4:00</div>
+    <div class="section-control row-flex center">
+      <div class="player-section column-flex">
+        <div class="player-buttons row-flex">
+          <img class="button" src="../assets/Icons/Shuffle18.svg" alt="shuffle">
+          <img class="button" src="../assets/Icons/prev.svg" alt="shuffle">
+          <img class="button" src="../assets/Icons/Pause.svg" alt="shuffle">
+          <img class="button" src="../assets/Icons/next.svg" alt="shuffle">
+          <img class="button" src="../assets/Icons/Repeat 18.svg" alt="shuffle">
+        </div>
+        <div class="player-duration-bar row-flex">
+          <div class="played-duration">2:00</div>
+          <div class="player-bar"></div>
+          <div class="player-song-duration">4:00</div>
+        </div>
       </div>
     </div>
     <div class="settings row-flex">
@@ -122,8 +124,12 @@ export default {
     /* padding: 0px; */
     margin-top: 10px;
   }
+  .player-section{
+    width: 100%;
+  }
   .player-bar{
-    width: 120px;
+    width: 100%;
+    min-width: 120px;
   }
   .settings{
     display: none !important;
@@ -142,17 +148,29 @@ export default {
   }
   .player-song-name{
     font-size: 13px;
-    width: 100px;
+    width: 64px;
   }
   .player-song-artist{
     font-size: 11px;
   }
-  .song , .settings{
+  .settings{
     width: 0px !important;
   }
   .player-body{
     border-radius: 0px;
   }
+  .song{
+    width: max-content;
+  }
+  .section-control{
+    width: 60%;
+    min-width: 200px;
+    margin: auto;
+  }
+  .player-duration-bar{
+    width: 90%;
+  }
+  
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -166,10 +184,10 @@ export default {
     margin-top: 10px;
   }
   .player-bar{
-    width: 250px;
+    width: 200px;
   }
   .settings{
-    display: none !important;
+    // display: none !important;
   }
   .player-buttons{
     padding-bottom: 10px;
@@ -190,11 +208,18 @@ export default {
   .player-song-artist{
     font-size: 13px;
   }
-  .song , .settings{
-    width: 0px !important;
+  .settings{
+    width: max-content;
   }
   .player-body{
     border-radius: 0px;
+  }
+  .section-control{
+    margin: auto;
+  }
+  .song{
+    width: fit-content;
+    margin-left: 15px;
   }
 }
 
