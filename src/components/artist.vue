@@ -135,6 +135,11 @@ width: 100%;
 }
 
 @media only screen and (min-width: 1600px){
-
+  .artist-name{
+    font-size: 18px;
+  }
+  .artist-like-number{
+    font-size: 14px;
+  }
 }
 </style>

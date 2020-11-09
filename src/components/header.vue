@@ -145,6 +145,7 @@ input[name="search-box"]::placeholder {
   } */
   .phone-logo{
     display: block !important;
+    margin-right: 30px;
   }
   .tabs, .dashboard, .logo{
     display: none !important;
@@ -170,6 +171,7 @@ input[name="search-box"]::placeholder {
   }
   .phone-logo{
     display: block !important;
+    margin-right: 30px;
   }
   .tabs, .dashboard, .logo{
     display: none !important;

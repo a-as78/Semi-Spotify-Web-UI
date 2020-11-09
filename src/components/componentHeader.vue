@@ -60,7 +60,12 @@ export default {
 }
 
 @media (max-width: 576px) {
-  
+ .title{
+   font-size: 18px;
+ } 
+ .view-all{
+   font-size: 12px;
+ }
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -84,6 +89,11 @@ export default {
 }
 
 @media (min-width: 1600px){
-  
+  .title{
+   font-size: 28px;
+ } 
+ .view-all{
+   font-size: 24px;
+ }
 }
 </style>

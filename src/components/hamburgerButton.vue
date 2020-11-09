@@ -50,6 +50,9 @@ body
   color: #cdcdcd;
   font-family: "Avenir Next", "Avenir", sans-serif;
 }
+nav{
+  position: fixed;
+}
 .user{
   position: relative;
   left: -30px;
@@ -62,7 +65,7 @@ body
   display: block;
   position: relative;
   top: 50px;
-  left: 50px;
+  left: 30px;
   z-index: 1;
   -webkit-user-select: none;
   user-select: none;
@@ -153,6 +156,7 @@ body
   width: 300px;
   margin: -100px 0 0 -50px;
   padding: 50px;
+  padding-left: 85px;
   padding-top: 125px;
   background: #edededB3;
   backdrop-filter: blur(5px);

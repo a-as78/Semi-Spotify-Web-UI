@@ -114,5 +114,6 @@ export default {
   .items{
     width: 16.5%;
   }
+  
 }
 </style>

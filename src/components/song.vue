@@ -118,6 +118,11 @@ export default {
 }
 
 @media (min-width: 1600px){
-  
+  .song-name{
+    font-size: 18px;
+  }
+  .song-artist{
+    font-size: 14px;
+  } 
 }
 </style>
