@@ -1,0 +1,23 @@
+@import '../Lato/latoFont.css';
+
+.row-reverse-flex{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  align-items: center;
+}
+.row-flex{
+  display: flex;
+  flex-direction: row;
+}
+.column-flex{
+  display: flex;
+  flex-direction: column;
+}
+.ceneter{
+  align-items: center;
+  justify-content: center;
+}
+*{
+  font-family: Lato;
+}
