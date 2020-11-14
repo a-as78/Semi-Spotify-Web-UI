@@ -1,9 +1,9 @@
-// @import '../Lato/latoFont.css';
+@import '../Lato/latoFont.css';
 
 .row-reverse-flex{
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
   align-items: center;
 }
 .row-flex{
@@ -14,10 +14,13 @@
   display: flex;
   flex-direction: column;
 }
-.ceneter{
+.center{
   align-items: center;
   justify-content: center;
 }
 *{
   font-family: Lato;
+}
+.wrap{
+  flex-wrap: wrap;
 }

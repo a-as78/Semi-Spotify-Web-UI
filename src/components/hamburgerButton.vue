@@ -8,7 +8,7 @@
           <span></span>
           <ul id="menu">
             <a href="#">
-              <li class="row-flex center user">
+              <li class="row-flex user">
               <div class="profile-icon">
                 <img src="../assets/Icons/Profile.svg">
               </div>

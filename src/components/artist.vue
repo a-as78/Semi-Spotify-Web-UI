@@ -6,7 +6,7 @@
              alt="cover">
         </div>
         <div class="artist-name">{{artist.name}}</div>
-        <div class="artist-likes center row-flex">
+        <div class="artist-likes row-flex">
           <div class="artist-like-icon">
             <img src="../assets/Icons/heart.svg" alt="like">
           </div>

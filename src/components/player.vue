@@ -15,7 +15,7 @@
              src="../assets/Icons/Alredy in Playlist.svg" alt="Already in Playlist">
       </div>
     </div>
-    <div class="section-control row-flex center">
+    <div class="section-control row-flex">
       <div class="player-section column-flex">
         <div class="player-buttons row-flex">
           <img class="button" src="../assets/Icons/Shuffle18.svg" alt="shuffle">

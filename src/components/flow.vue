@@ -11,7 +11,9 @@
           <img class="image"
               src="../assets/Images/Flow cover1.png" alt="cover1">
           <div class="flow-icon">
-            <img class="play-button" src="../assets/Images/Path 368.svg" alt="play">
+            <img class="play-button" 
+                 src="../assets/Images/Path 368.svg" 
+                 alt="play">
           </div>
         </div>
         <img class="flow-body"
