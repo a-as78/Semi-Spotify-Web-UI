@@ -6,9 +6,10 @@
                       @next="scrollLeft"
                       @previous="scrollRight"></component-header>
     <div class="artists-body row-flex"
+         :class="{'songs-body': doScroll , 'songs-body-viewALl': viewAll}"
          ref="artistBox">
       <app-artist class="column-flex"
-                  v-for="(artist, index) in artists" 
+                  v-for="(artist, index) in items" 
                   :key="index"
                   :artist="artist">
       </app-artist>
@@ -26,17 +27,19 @@ export default {
     AppArtist
   },
   props: {
+    urls: Array,
     header: Boolean,
-    artists: Array,
     viewAll: Boolean,
-    title: String
+    title: String,
+    artists: Array
   },
   data(){
     return{
-      pose : 0
+      // title: "New Releases for You"
+      doScroll: !this.viewAll,
+      pose: 0,
+      items: this.artists
     }
-  },
-  created(){
   },
   methods: {
     scrollLeft(){
@@ -48,13 +51,32 @@ export default {
         });
     },
     scrollRight(){
-      this.pose-=50
+      this.pose -= 50
       this.$refs.artistBox.scroll({
         top: 0,
         left: this.pose,
         behavior: 'smooth'
         });
+    },
+    reportWindowSize() {
+      if(this.viewAll){
+        if(window.innerWidth > 1200 ){
+          this.items = this.artists  
+        }else if(window.innerWidth > 992 ){
+          this.items = this.artists.slice(0 , 5)  
+        }else if(window.innerWidth > 768 ){
+          this.items = this.artists.slice(0 , 4)  
+        }else if(window.innerWidth > 567 ){
+          this.items = this.artists.slice(0 , 3)  
+        }else if(window.innerWidth < 567 ){
+          this.items = this.artists.slice(0 , 2)  
+        }
+      }
     }
+  },
+  mounted(){
+    this.reportWindowSize();
+    window.addEventListener("resize", this.reportWindowSize);
   }
 }
 </script>
@@ -71,7 +93,7 @@ export default {
   font-size: 22px;
 }
 .artists-body{
-  justify-content: space-between;
+  justify-content: space-around;
   overflow-y: hidden;
   overflow-x: scroll;
   -ms-overflow-style: none;  /* IE and Edge */

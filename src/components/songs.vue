@@ -37,7 +37,6 @@ export default {
   },
   data(){
     return{
-      // title: "New Releases for You"
       doScroll: !this.viewAll,
       pose: 0,
       items: this.songs
