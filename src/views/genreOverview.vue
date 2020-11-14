@@ -1,6 +1,6 @@
 <template>
     <div class="genre-overview-body">
-        <div class="genre-nav-bar row-flex whole-width">
+        <div class="genre-nav-bar row-flex">
             <div class="genre-name">ROCK</div>
             <div class="nav-items row-flex">
                 <div class="nav-item">OVERVIEW</div>
@@ -9,72 +9,40 @@
                 <div class="nav-item">ARTISTS</div>
             </div>
         </div>
-        <div class="populars whole-width">
-            <div class="section-header">
-                <app-header :title="popularTitle"
-                            :viewAll="false">
-                </app-header>
-            </div>
-            <div class="items row-flex">
-                <app-song v-for="(popular, index) in populars"
-                          :key="index"
-                          :song="popular"></app-song>
-            </div>
-        </div>
-        <div class="playlists whole-width">
-            <div class="section-header">
-                <app-header :title="playlistTitle"
-                            :viewAll="true">
-                </app-header>
-            </div>
-            <div class="items row-flex">
-                <app-song v-for="(playlist, index) in playlists"
-                          :key="index"
-                          :song="playlist"></app-song>
-            </div>
-        </div>
-        <div class="new-released whole-width">
-            <div class="section-header">
-                <app-header :title="songsTitle"
-                            :viewAll="true">
-                </app-header>
-            </div>
-            <div class="items row-flex">
-                <app-song v-for="(song, index) in songs"
-                          :key="index"
-                          :song="song"></app-song>
-            </div>
-        </div>
-        <div class="artists whole-width">
-            <div class="section-header">
-                <app-header :title="artistTitle"
-                            :viewAll="true">
-                </app-header>
-            </div>
-            <div class="items row-flex">
-                <app-artist v-for="(artist, index) in artists"
-                          :key="index"
-                          :artist="artist"></app-artist>
-            </div>
-        </div>
+        <app-songs :title='popularTitle'
+                 :viewAll="false"
+                 :playlist="true"
+                 :header="true"
+                 :songs="popular"></app-songs>
+        <app-songs :viewAll="true"
+                 :title="playlistTitle"
+                 :playlist="true"
+                 :header="true"
+                 :songs="playlists"></app-songs>
+        <app-songs :title='songsTitle'
+                 :songs='song'
+                 :viewAll="true"
+                 :header="true"></app-songs>
+         <app-artists :header="true"
+                      :title='artistTitle'
+                      :viewAll="true"
+                      :artists="artist"></app-artists>
     </div>
 </template>
 
 <script>
-import AppSong from '../components/song.vue'
-import AppArtist from '../components/artist.vue'
-import AppHeader from '../components/componentHeader.vue';
+import AppSongs from '../components/songs.vue'
+import AppArtists from '../components/artists.vue'
 
 export default {
   components: {
-      AppSong,
-      AppArtist,
-      AppHeader
+      AppSongs,
+      AppArtists
   },
   data(){
     return{
       popularTitle: "Popular in this week",
-      populars: [
+      popular: [
         {
           name: "Deep Focus",
           url: require("../assets/Images/Deep Focus.png"),
@@ -140,7 +108,7 @@ export default {
         }
       ],
       songsTitle: "New releases",
-      songs: [
+      song: [
         {
           name: "LPS",
           url: require("../assets/Images/Image 418.png"),
@@ -173,7 +141,7 @@ export default {
         }
       ],
       artistTitle: "Artists",
-      artists: [
+      artist: [
         {
           name: "name",
           url: require("../assets/Images/Mask Group 305.png"),
@@ -204,7 +172,8 @@ export default {
           url: require("../assets/Images/Bowie.png"),
           detail: "21323"
         }
-      ]
+      ],
+      playlist: true
     }
   }
 }
@@ -213,11 +182,10 @@ export default {
 <style lang="scss" scoped>
 .genre-overview-body{
   color: white;
-  font-size: 22px;
   width: calc(100% - 280px);
   height: 100%;
   background-color: #161A1A;
-  padding: 100px 140px !important;
+  padding: 0px 140px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -225,6 +193,7 @@ export default {
 }
 .genre-nav-bar{
     color: white;
+    width: 100%;
 }
 .genre-name{
     padding: 30px;
@@ -235,7 +204,94 @@ export default {
     font-size: 16px;
     padding: 50px 20px 30px;
 }
-.whole-width{
-    width: 100%;
+
+@media (max-width: 576px) {
+  .genre-overview-body{
+    width: calc(100% - 60px);
+    padding: 0px 30px;
+  }
+  .genre-name{
+    padding: 30px 15px;
+    font-size: 25px;
+    padding-left: 0px;
+  }
+  .nav-items{
+      display: none;
+  }
+  .nav-item{
+    font-size: 12px;
+    padding: 40px 7px 30px;
+  }  
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .genre-overview-body{
+    width: calc(100% - 110px);
+    padding: 0px 55px;
+  }
+  .genre-name{
+    padding: 30px 15px;
+    font-size: 25px;
+    padding-left: 0px;
+  }
+  .nav-item{
+    font-size: 12px;
+    padding: 40px 7px 30px;
+  }  
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .genre-overview-body{
+    width: calc(100% - 110px);
+    padding: 0px 55px;
+  }
+  .genre-name{
+    padding: 30px 20px;
+    font-size: 30px;
+    padding-left: 0px;
+  }
+  .nav-item{
+    font-size: 12px;
+    padding: 47px 10px 30px;
+  }  
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .genre-overview-body{
+    width: calc(100% - 140px);
+    padding: 0px 70px;
+  }
+  .genre-name{
+    padding: 30px 25px;
+    font-size: 35px;
+    padding-left: 0px;
+  }
+  .nav-item{
+    font-size: 15px;
+    padding: 47px 12px 30px;
+  }  
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .genre-overview-body{
+    width: calc(100% - 200px);
+    padding: 0px 100px;
+  }
+  .genre-name{
+    padding: 30px;
+    font-size: 35px;
+    padding-left: 0px;
+  }
+  .nav-item{
+    font-size: 15px;
+    padding: 47px 15px 30px;
+  }  
+}
+
+@media (min-width: 1600px){
 }
 </style>

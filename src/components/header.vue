@@ -160,7 +160,7 @@ input[name="search-box"]::placeholder {
     margin-right: 5px;
   }
   input[name="search-box"] {
-    width: 80px;
+    width: 50px;
   }
 }
 

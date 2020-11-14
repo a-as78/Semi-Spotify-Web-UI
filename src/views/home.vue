@@ -18,6 +18,8 @@
                  :viewAll="true"
                  :header="true"></app-songs>
       <app-artists :header="true"
+                   :title="artistTitle"
+                   :viewAll="false"
                    :artists="artist"></app-artists>
     </div>
 </template>
@@ -185,6 +187,7 @@ export default {
           detail: "gsav safv"
         }
       ],
+      artistTitle: "You might like these artists",
       artist: [
         {
           name: "name",

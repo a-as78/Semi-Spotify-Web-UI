@@ -2,7 +2,7 @@
   <div class="artists column-flex">
     <component-header v-if="header"
                       :title="title"
-                      :viewAll="false"
+                      :viewAll="viewAll"
                       @next="scrollLeft"
                       @previous="scrollRight"></component-header>
     <div class="artists-body row-flex"
@@ -27,11 +27,12 @@ export default {
   },
   props: {
     header: Boolean,
-    artists: Array
+    artists: Array,
+    viewAll: Boolean,
+    title: String
   },
   data(){
     return{
-      title: "You might like these artists",
       pose : 0
     }
   },
