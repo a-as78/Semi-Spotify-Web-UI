@@ -8,7 +8,8 @@
                 <app-category v-for="(genreUrl,index) in genreUrls"
                               :key="index"
                               class="category-item"
-                              :url="genreUrl"></app-category>
+                              :url="genreUrl">
+                </app-category>
             </div>
         </div>
         <div class="moods">
@@ -19,7 +20,8 @@
                 <app-category v-for="(moodUrl,index) in moodUrls"
                               :key="index"
                               class="category-item"
-                              :url="moodUrl"></app-category>
+                              :url="moodUrl">
+                </app-category>
             </div>
         </div>
     </div>
