@@ -33,11 +33,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import './assets/styles/style.scss';
-@import './assets/styles/rest.scss';
+// @import "./assets/styles/style.scss";
+// @import "./assets/styles/rest.scss";
 
 .app-body{
   position: relative !important;
+  background-color: #161A1A;
 }
 .ham-but{
   display: none !important;

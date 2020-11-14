@@ -43,7 +43,6 @@ export default {
     }
   },
   created(){
-    // console.log("recently played" , this.recentlyPlayed)
   },
   methods: {
     reportWindowSize() {

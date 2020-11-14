@@ -1,53 +1,43 @@
 <template>
   <div class="categories row-flex">
     <div class="category"
-         v-for="(url, index) in categoriesUrl" 
+         v-for="(url, index) in urls" 
          :key="index">
-      <img class="category-cover"
-           :src="url">
+      <app-category class="category-cover"
+           :url="url">
+      </app-category>
     </div>
   </div>
 </template>
 
 <script>
 
+import AppCategory from './category.vue';
+
 export default {
   components: {
+    AppCategory
   },
   props: {
+    categoriesUrl: Array
   },
   data(){
     return{
-      categoriesUrl: [
-        require("../assets/Images/HIP - HOP.svg"),
-        require("../assets/Images/Indie.svg"),
-        require("../assets/Images/POP.svg"),
-        require("../assets/Images/rock.svg"),
-        require("../assets/Images/DANCE - ELECTRO.svg"),
-        require("../assets/Images/Country.svg")
-      ],
-      urls: [
-        require("../assets/Images/HIP - HOP.svg"),
-        require("../assets/Images/Indie.svg"),
-        require("../assets/Images/POP.svg"),
-        require("../assets/Images/rock.svg"),
-        require("../assets/Images/DANCE - ELECTRO.svg"),
-        require("../assets/Images/Country.svg")
-      ]
+      urls: this.categoriesUrl
     }
   },
   methods: {
     reportWindowSize() {
       if(window.innerWidth > 1200){
-        this.categoriesUrl = this.urls
+        this.urls = this.categoriesUrl
       }else if(window.innerWidth > 992 ){
-        this.categoriesUrl = this.urls.slice(0 , 5)  
+        this.urls = this.categoriesUrl.slice(0 , 5)  
       }else if(window.innerWidth > 768 ){
-        this.categoriesUrl = this.urls.slice(0 , 4)  
+        this.urls = this.categoriesUrl.slice(0 , 4)  
       }else if(window.innerWidth > 567 ){
-        this.categoriesUrl = this.urls.slice(0 , 3)  
+        this.urls = this.categoriesUrl.slice(0 , 3)  
       }else if(window.innerWidth < 567 ){
-        this.categoriesUrl = this.urls.slice(0 , 2)  
+        this.urls = this.categoriesUrl.slice(0 , 2)  
       }
     }
   },

@@ -2,7 +2,7 @@
     <div class="home-body">
       <home-flow></home-flow>       
       <app-recently-played :recentlyPlayed="recentlyPlayed"></app-recently-played>
-      <app-categories></app-categories>
+      <app-categories :categoriesUrl='categoriesUrl'></app-categories>
       <app-songs :title='productiveTitle'
                  :viewAll="false"
                  :playlist="true"
@@ -39,6 +39,14 @@ export default {
   },
   data(){
     return{
+      categoriesUrl: [
+        require("../assets/Images/HIP - HOP.svg"),
+        require("../assets/Images/Indie.svg"),
+        require("../assets/Images/POP.svg"),
+        require("../assets/Images/rock.svg"),
+        require("../assets/Images/DANCE - ELECTRO.svg"),
+        require("../assets/Images/Country.svg")
+      ],
       recentlyPlayed: [
         {
           artist: true,
