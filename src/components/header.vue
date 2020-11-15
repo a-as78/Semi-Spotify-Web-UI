@@ -32,7 +32,10 @@
     <div class="row-reverse-flex">
       <div class="tabs row-reverse-flex">
         <div class="tab tab1">
-          <div class="active-tab">Home</div>
+          <div class="active-tab"
+               @click="goToHome">
+              Home
+          </div>
         </div>
         <div class="tab tab2">Library</div>
         <div class="tab tab3">Browse</div>
@@ -55,6 +58,13 @@ export default {
   data(){
     return{
       // userName: 'John Doe'
+    }
+  },
+  methods: {
+    goToHome(){
+      this.$router.push({
+        name: "home"
+      })
     }
   }
 }
@@ -124,6 +134,7 @@ input[name="search-box"]::placeholder {
   margin-left: 40px;
 }
 .active-tab{
+  color: white;
   border: 1px solid none;
   background-color: #161A1A;
   border-radius: 40px;
