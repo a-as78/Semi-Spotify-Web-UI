@@ -8,7 +8,7 @@
         <div class="artist-name">{{artist.name}}</div>
         <div class="artist-likes row-flex">
           <div class="artist-like-icon">
-            <img src="../assets/Icons/heart.svg" alt="like">
+            <img src="../assets/Images/heart.png" alt="like">
           </div>
           <div class="artist-like-number">{{artist.detail}}</div>
         </div>
@@ -73,7 +73,7 @@ width: 100%;
   align-items: center;
   font-size: 13px;
   color: #FFFFFF;
-  padding-top: 3px;
+  padding-top: 8px;
   }
 .artist-like-number{
   font-size: 13px;

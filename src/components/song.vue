@@ -7,7 +7,7 @@
     <div class="row-flex">
       <div v-if="playlist"
            class="artist-like-icon">
-        <img src="../assets/Icons/heart.svg" alt="like">
+        <img src="../assets/Images/heart.png" alt="like">
       </div>
         <div class="song-artist">{{song.detail}}</div>
       </div>
