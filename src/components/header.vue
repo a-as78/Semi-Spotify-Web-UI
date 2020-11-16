@@ -5,7 +5,8 @@
   <div class="top-navigation row-reverse-flex">
     <div class="blur-cover"></div>
     <div class="row-reverse-flex">
-      <div class="dashboard row-reverse-flex">
+      <div class="dashboard row-reverse-flex"
+           :class="{hide: notAuthenticated}">
         <div class="dashboard-arrow">
           <img src="../assets/Icons/Path 690.svg">
         </div>
@@ -14,23 +15,34 @@
           <img src="../assets/Icons/Profile.svg">
         </div>
       </div>
+      //todo: when the user is not authenticated
+      <div class="row-flex" 
+           :class="{hide: authenticated}">
+        <div>Download</div>
+        <div>Help</div>
+        <div>Log In</div>
+        <div>Sign Up</div>
+      </div>
       <div class="phone-logo">
         <img src="../assets/Full Logo.svg">
       </div>
-      <div class="search">
+      <div class="search"
+           :class="{hide: notAuthenticated}">
         <input type="search"
                name="search-box"
                placeholder="Search">
       </div>
     </div>
-    <div class="playing-music">
-
+    <div class="playing-music"
+         :class="{hide: notAuthenticated}">
     </div>
-    <div class="navigation-bar">
+    <div class="navigation-bar"
+         :class="{hide: notAuthenticated}">
 
     </div>
     <div class="row-reverse-flex">
-      <div class="tabs row-reverse-flex">
+      <div class="tabs row-reverse-flex"
+           :class="{hide: notAuthenticated}">
         <div class="tab tab1">
           <div class="active-tab"
                @click="goToHome">
@@ -52,12 +64,12 @@
 // import HamBut from './hamburgerButton.vue';
 
 export default {
-  components: {
-    // HamBut
+  props: {
+    authenticated: Boolean,
+    notAuthenticated: Boolean
   },
   data(){
     return{
-      // userName: 'John Doe'
     }
   },
   methods: {
@@ -71,6 +83,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.hide{
+  display: none;
+}
 .phone-logo{
   display: none !important;
   width: 50px;

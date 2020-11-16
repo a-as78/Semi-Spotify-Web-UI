@@ -3,10 +3,12 @@
     <ham-but class="ham-but"
              :user="userName">
     </ham-but>
-    <app-header class="header"></app-header>
+    <app-header class="header"
+                :authenthicated = "authenthicated"
+                :notAuthenthicated = "notAuthenthicated"></app-header>
     <router-view class="body"></router-view>
     <div class="player row-flex">
-      <app-player></app-player>
+      <app-player :class="{hide: hidePlayer}"></app-player>
     </div>
   </div>
 </template>
@@ -25,7 +27,27 @@ export default {
   },
   data(){
     return {
-      userName: 'John Doe'
+      userName: 'John Doe',
+      hidePlayer: false,
+      authenthicated: true,
+      notAuthenthicated: false
+    }
+  },
+  methods: {
+  },
+  computed: {
+  },
+  created(){
+    console.log(this.$route.name)
+    if(this.$route.name == "signup"){
+      console.log("sign up bood")
+      this.hidePlayer = true;
+      this.authenthicated = false;
+      this.notAuthenthicated = true
+    } else {
+      this.hidePlayer = false;
+      this.authenthicated = true;
+      this.notAuthenthicated = false
     }
   }
 }
@@ -73,6 +95,9 @@ body{
   // width: 100%;
   padding-top: 90px !important;
   padding-bottom: 100px !important;
+}
+.hide{
+  display: none;
 }
 
 @media (max-width: 576px) {

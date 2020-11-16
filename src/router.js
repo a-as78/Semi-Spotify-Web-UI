@@ -17,7 +17,7 @@ const router = new VueRouter({
         {path:"/genreoverview" , component: GenreOverview},
         {path:"/myplaylist" , component: MyPlaylist},
         {path:"/playlist" , component: Playlist}, 
-        {path:"/signup" , component: SignUp}    
+        {path:"/signup" , component: SignUp, name: "signup"}    
     ]
 })
   
