@@ -3,6 +3,7 @@ import genreAndMood from './views/genreAndMood.vue'
 import GenreOverview from './views/genreOverview.vue';
 import MyPlaylist from './views/myPlaylist.vue';
 import Playlist from './views/playlist.vue';
+import SignUp from './views/signUp.vue';
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
@@ -15,7 +16,8 @@ const router = new VueRouter({
         {path:"/genreandmood" , component: genreAndMood},
         {path:"/genreoverview" , component: GenreOverview},
         {path:"/myplaylist" , component: MyPlaylist},
-        {path:"/playlist" , component: Playlist}    
+        {path:"/playlist" , component: Playlist}, 
+        {path:"/signup" , component: SignUp}    
     ]
 })
   

@@ -89,24 +89,25 @@ export default {
     width: calc(100% - 280px);
     height: 100%;
     background-color: #161A1A;
-    padding: 100px 140px !important;
+    padding: 100px 140px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 }
 .playlists{
     justify-content: flex-start;
+    margin: 0px auto;
 }
 .create-playlist{
-    width: calc(13vw - 6px);
-    height: calc(13vw - 6px);
+    width: 194px;
+    height: 194px;
     margin: 10px;
     margin-bottom: auto;
     border: 3px solid white;
     border-radius: 8px;
 }
 .playlist{
-    width: 13vw;
+    width: 200px;
     height: auto;
 }
 .add-button{
@@ -123,42 +124,85 @@ export default {
     margin: 8px;   
 }
 
-@media (max-width: 576px) {
+@media (max-width: 576px){
   .myplaylist-body{
     width: calc(100% - 60px);
     padding: 0px 30px;
   }
+  .create-playlist{
+    width: 104px;
+    height: 104px;
+  }
+  .playlist{
+    width: 110px;
+    height: auto;
+  }
+  .create-title{
+    font-size: 12px;
+  }
 }
 
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
+@media (min-width: 576px) and (max-width: 768px){
   .myplaylist-body{
     width: calc(100% - 110px);
     padding: 0px 55px;
+  }
+  .create-playlist{
+    width: 124px;
+    height: 124px;
+  }
+  .playlist{
+    width: 130px;
+    height: auto;
   }
 }
 
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 992px){
   .myplaylist-body{
     width: calc(100% - 110px);
     padding: 0px 55px;
   }
+  .create-playlist{
+    width: 164px;
+    height: 164px;
+  }
+  .playlist{
+    width: 170px;
+    height: auto;
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
+@media (min-width: 992px) and (max-width: 1200px){
   .myplaylist-body{
     width: calc(100% - 140px);
     padding: 0px 70px;
   }
+  .create-playlist{
+    width: 164px;
+    height: 164px;
+  }
+  .playlist{
+    width: 170px;
+    height: auto;
+  }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
+@media (min-width: 1200px) and (max-width: 1600px){
   .myplaylist-body{
     width: calc(100% - 200px);
     padding: 0px 100px;
+  }
+  .create-playlist{
+    width: 164px;
+    height: 164px;
+  }
+  .playlist{
+    width: 170px;
+    height: auto;
   }
 }
 

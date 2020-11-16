@@ -21,12 +21,11 @@ export default {
   components: {
     AppHeader,
     AppPlayer,
-        HamBut
-
+    HamBut
   },
   data(){
     return {
-            userName: 'John Doe'
+      userName: 'John Doe'
     }
   }
 }
