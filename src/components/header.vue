@@ -15,13 +15,12 @@
           <img src="../assets/Icons/Profile.svg">
         </div>
       </div>
-      //todo: when the user is not authenticated
-      <div class="row-flex" 
+      <div class="row-flex authentication-header" 
            :class="{hide: authenticated}">
-        <div>Download</div>
-        <div>Help</div>
-        <div>Log In</div>
-        <div>Sign Up</div>
+        <div class="download-item row-flex center">Download</div>
+        <div class="help-item row-flex center">Help</div>
+        <div class="login-item row-flex center">Log In</div>
+        <div class="signup-item active-item row-flex center">Sign Up</div>
       </div>
       <div class="phone-logo">
         <img src="../assets/Full Logo.svg">
@@ -78,6 +77,8 @@ export default {
         name: "home"
       })
     }
+  },
+  created(){
   }
 }
 </script>
@@ -93,6 +94,22 @@ export default {
 }
 .header{
   position: relative;
+}
+.authentication-header{
+  color: white;
+}
+.download-item, .help-item, .login-item, .signup-item{
+  margin: 0px 20px;
+  width: 105px;
+  height: 35px;
+}
+.login-item, .signup-item{
+  border: 1px solid white;
+  border-radius: 20px;
+}
+.active-item{
+  color: black;
+  background-color: white;
 }
 /* .ham-but{
   display: none !important;
@@ -213,6 +230,11 @@ input[name="search-box"]::placeholder {
   }
   input[name="search-box"] {
     width: 80px;
+  }
+  .download-item, .help-item, .login-item, .signup-item{
+    margin: 0px 5px;
+    width: 80px;
+    height: 30px;
   }
 }
 
