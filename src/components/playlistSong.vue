@@ -13,17 +13,17 @@
         <div class="album">{{song.album}}</div>
         <div class="items row-flex">
             <div class="row-flex center item duration">{{song.duration}}</div>
-            <div class="item row-flex center">
+            <div class="item row-flex center more-item">
                 <img class="more"
                      src="../assets/Icons/More.svg" 
                      alt="">
             </div>
-            <div class="item row-flex center">
+            <div class="item row-flex center like-item">
                 <img class="like"
                      src="../assets/Icons/heart.svg"
                      alt="">
             </div>
-            <div class="item row-flex center">
+            <div class="item row-flex center add-item">
                 <img class="add"
                      src="../assets/Icons/Group 1338.svg" 
                      alt="">
@@ -80,13 +80,29 @@ export default {
     .album{
         display: none;
     }
-    .duration{
+    .duration, .like-item , .add-item{
         display: none;
+    }
+    .title, .artist, .album{
+        width: 40%;
+        font-size: 12px;
+    }
+    .playlist-song{
+        justify-content: space-around;
+    }
+    .more, .more-item{
+        display: flex;
     }
 }
 @media (min-width: 576px) and (max-width: 768px) {
     .album{
         display: none;
+    }
+    .title, .artist, .album{
+        width: 30%;
+    }
+    .items{
+        width: 30%;
     }
 }
 </style>

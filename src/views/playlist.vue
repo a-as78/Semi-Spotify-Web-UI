@@ -12,9 +12,24 @@
                 <div class="playlist-name">70s Rock Anthems</div>
                 <div class="playlist-detail">Golden age of rock. Cover: Led Zeppelin</div>
                 <div class="playlist-duration">88 Songs, 9 hr 13 min</div>
+                <div class="items row-flex center only-phone">
+                  <div class="button row-flex center">
+                    Pause
+                  </div>
+                  <div class="like-button row-flex center">
+                    <img class="like"
+                          src="../assets/Icons/heart.svg"
+                          alt="like">
+                  </div>
+                  <div class="more-button row-flex center">
+                    <img class="more"
+                        src="../assets/Icons/More.svg"
+                        alt="more">
+                  </div>
+                </div>
             </div>
           </div>
-          <div class="items row-flex center">
+          <div class="items row-flex center only-desktop">
               <div class="button row-flex center">
                   Pause
               </div>
@@ -228,6 +243,7 @@ export default {
 }
 .playlist-image{
     margin: 35px;
+    margin-left: 0px;
 }
 .playlist-cover{
     width: 200px;
@@ -265,7 +281,7 @@ export default {
     border-radius: 50%;
 }
 .like-button{
-    margin: 20px;
+    margin: 0px 20px;
 }
 .more , .like{
     width: 15px;
@@ -298,31 +314,65 @@ export default {
 .song-number{
   width: 30px;
 }
+.only-phone{
+  display: none;
+}
+.only-desktop{
+  display: flex;
+}
 
 @media (max-width: 576px) {
   .playlist-body{
     width: calc(100% - 60px);
     padding: 0px 30px;
   }
+  .only-phone{
+    display: flex;
+  }
+  .only-desktop{
+    display: none;
+  }
+  .playlist-cover{
+    width: 100px;
+  }
+  .type, .playlist-detail, .followers-number{
+    display: none;
+  }
+  .playlist-name{
+    font-size: 20px;
+  }
+  .playlist-detail{
+    font-size: 14px;
+  }
+  .playlist-duration{
+    font-size: 12px;
+  }
+  .button{
+    width: 80px;
+    height: 30px;
+  }
+  .like-button{
+    margin: 0px 10px;
+  }
+  .song-album{
+    display: none;
+  }
+  .song-duration{
+    display: none;
+  }
+  .title, .song-artist, .song-album{
+    width: 40%;
+  }
+  .list-header{
+    justify-content: space-evenly;
+  }
 }
 
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
+@media (min-width: 576px) and (max-width: 768px){
   .playlist-body{
     width: calc(100% - 110px);
     padding: 0px 55px;
-  }
-}
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-  .playlist-body{
-    width: calc(100% - 110px);
-    padding: 0px 55px;
-  }
-  .playlist-body{
-    width: calc(100% - 140px);
-    padding: 0px 70px;
   }
   .playlist-cover{
     width: 150px;
@@ -337,6 +387,43 @@ export default {
     font-size: 12px;
   }
   .button{
+    width: 130px;
+    height: 30px;
+  }
+  .followers-number{
+    font-size: 12px;
+  }
+  .song-album{
+    display: none;
+  }
+  .title, .song-artist, .song-album{
+    width: 30%;
+  }
+  .song-duration{
+    width: 30%;
+  }
+  .list-header{
+    justify-content: space-around;
+  }
+  .only-phone{
+    display: flex;
+  }
+  .only-desktop{
+    display: none;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 992px) {
+  .playlist-body{
+    width: calc(100% - 110px);
+    padding: 0px 55px;
+  }
+  .playlist-cover{
+    width: 150px;
+  }
+  .playlist-name{
+    font-size: 30px;
   }
   .playlist-detail{
     font-size: 14px;
@@ -353,7 +440,33 @@ export default {
   }
 }
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
+@media (min-width: 992px) and (max-width: 1200px){
+  .playlist-body{
+    width: calc(100% - 200px);
+    padding: 0px 100px;
+  }
+  .playlist-cover{
+    width: 150px;
+  }
+  .playlist-name{
+    font-size: 30px;
+  }
+  .playlist-detail{
+    font-size: 14px;
+  }
+  .playlist-duration{
+    font-size: 12px;
+  }
+  .button{
+    width: 130px;
+    height: 30px;
+  }
+  .followers-number{
+    font-size: 12px;
+  }
+}
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) and (max-width: 1600px){
   .playlist-body{
     width: calc(100% - 200px);
     padding: 0px 100px;
