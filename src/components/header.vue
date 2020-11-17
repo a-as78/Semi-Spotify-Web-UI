@@ -205,6 +205,23 @@ input[name="search-box"]::placeholder {
   input[name="search-box"] {
     width: 50px;
   }
+  .active-item{
+    display: none;
+  }
+  .download-item, .help-item, .login-item, .signup-item{
+    margin: 0px 5px;
+    width: 50px;
+    height: 20px;
+    font-size: 14px;
+  }
+  .login-item, .signup-item{
+    border: 1px solid white;
+    border-radius: 7px;
+  }
+  .phone-logo{
+    margin-right: 70px;
+    width: 30px;
+  }
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -232,9 +249,16 @@ input[name="search-box"]::placeholder {
     width: 80px;
   }
   .download-item, .help-item, .login-item, .signup-item{
-    margin: 0px 5px;
-    width: 80px;
-    height: 30px;
+    margin: 0px 10px;
+    width: 70px;
+    height: 25px;
+  }
+  .login-item, .signup-item{
+    border: 1px solid white;
+    border-radius: 10px;
+  }
+  .phone-logo{
+    margin-right: 80px;
   }
 }
 
