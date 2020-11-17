@@ -4,7 +4,7 @@
            :user="userName"></ham-but> -->
   <div class="top-navigation row-reverse-flex">
     <div class="blur-cover"></div>
-    <div class="row-reverse-flex">
+    <div class="whole-width row-reverse-flex">
       <div class="dashboard row-reverse-flex"
            :class="{hide: notAuthenticated}">
         <div class="dashboard-arrow">
@@ -19,8 +19,16 @@
            :class="{hide: authenticated}">
         <div class="download-item row-flex center">Download</div>
         <div class="help-item row-flex center">Help</div>
-        <div class="login-item row-flex center">Log In</div>
-        <div class="signup-item active-item row-flex center">Sign Up</div>
+        <div class="login-item row-flex center"
+             @click="$router.push({name: 'login'})"
+             :class="{'active-item': login }">
+             Log In
+        </div>
+        <div class="signup-item row-flex center"
+             @click="$router.push({name: 'signup'})"
+             :class="{'active-item': signup}">
+             Sign Up
+        </div>
       </div>
       <div class="phone-logo">
         <img src="../assets/Full Logo.svg">
@@ -69,6 +77,8 @@ export default {
   },
   data(){
     return{
+      signup: false,
+      login: false
     }
   },
   methods: {
@@ -76,9 +86,28 @@ export default {
       this.$router.push({
         name: "home"
       })
+    },
+    checkActiveItem(){
+      if(this.$route.name == 'signup'){
+        this.signup = true
+        this.login = false
+      } else if(this.$route.name == 'login'){
+        this.signup = false
+        this.login = true
+      } else {
+        this.signup = false
+        this.login = false
+      } 
+      console.log(this.signup , this.login)
     }
   },
   created(){
+    this.checkActiveItem()
+  },
+  watch: {
+    $route() {
+      this.checkActiveItem()
+    }
   }
 }
 </script>

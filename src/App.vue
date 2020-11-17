@@ -18,7 +18,6 @@ import AppHeader from './components/header.vue';
 import AppPlayer from './components/player.vue';
 import HamBut from './components/hamburgerButton.vue';
 
-
 export default {
   components: {
     AppHeader,
@@ -30,24 +29,39 @@ export default {
       userName: 'John Doe',
       hidePlayer: false,
       authenticated: true,
-      notAuthenticated: false
+      notAuthenticated: false,
+      test: {
+        a: '',
+        b: ''
+      }
     }
   },
   methods: {
+    checkAuthentication(){
+      console.log(this.$route.name)
+      if(this.$route.name == "signup" || this.$route.name == "login"){
+        this.hidePlayer = true;
+        this.authenticated = false;
+        this.notAuthenticated = true
+      } else {
+        this.hidePlayer = false;
+        this.authenticated = true;
+        this.notAuthenticated = false
+      }
+    }
   },
   computed: {
   },
   created(){
-    if(this.$route.name == "signup"){
-      this.hidePlayer = true;
-      this.authenticated = false;
-      this.notAuthenticated = true
-    } else {
-      this.hidePlayer = false;
-      this.authenticated = true;
-      this.notAuthenticated = false
-    }
+    this.checkAuthentication()
     // console.log(this.notAuthenticated)
+  },
+  watch: {
+    $route() {
+      console.log('here')
+      this.checkAuthentication()
+      // react to route changes...
+    }
   }
 }
 </script>

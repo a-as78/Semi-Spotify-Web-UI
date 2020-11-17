@@ -9,12 +9,6 @@
             <input type="text" name="userName" placeholder="User Name">
             <div class="row-flex item">
                 <input type="date" name="birthDate" valu="Birth Date">
-                <!-- <select id="date-of-birth">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="opel">Opel</option>
-                    <option value="audi">Audi</option>
-                </select>  -->
                 <select id="gender">
                     <option value="">Gender</option>
                     <option value="female">Female</option>
@@ -74,7 +68,7 @@ input[name = email], input[name = pass], input[name = userName]{
     width: 400px;
     height: 50px;
     margin: 10px;
-    border-color: #D5D5D5;
+    border: 1px solid #D5D5D5;
 }
 .item{
     margin: 10px 10px 100px;
@@ -90,7 +84,7 @@ input[name = birthDate]{
     width: 185px;
     height: 46px;
     margin-right: 14px;
-    border-color: black;
+    border:  1px solid black;
 }
 .signup-button {
     background-color: #2D9BEF;
