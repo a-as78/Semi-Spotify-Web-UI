@@ -1,12 +1,14 @@
 <template>
   <div class="column-flex app-body">
-    <ham-but class="ham-but"
+    <ham-but :class="{'ham-but': authenticated}"
              :user="userName">
     </ham-but>
-    <app-header class="header"></app-header>
+    <app-header class="header"
+                :authenticated = "authenticated"
+                :notAuthenticated = "notAuthenticated"></app-header>
     <router-view class="body"></router-view>
     <div class="player row-flex">
-      <app-player></app-player>
+      <app-player :class="{hide: hidePlayer}"></app-player>
     </div>
   </div>
 </template>
@@ -21,13 +23,31 @@ export default {
   components: {
     AppHeader,
     AppPlayer,
-        HamBut
-
+    HamBut
   },
   data(){
     return {
-            userName: 'John Doe'
+      userName: 'John Doe',
+      hidePlayer: false,
+      authenticated: true,
+      notAuthenticated: false
     }
+  },
+  methods: {
+  },
+  computed: {
+  },
+  created(){
+    if(this.$route.name == "signup"){
+      this.hidePlayer = true;
+      this.authenticated = false;
+      this.notAuthenticated = true
+    } else {
+      this.hidePlayer = false;
+      this.authenticated = true;
+      this.notAuthenticated = false
+    }
+    // console.log(this.notAuthenticated)
   }
 }
 </script>
@@ -74,6 +94,9 @@ body{
   // width: 100%;
   padding-top: 90px !important;
   padding-bottom: 100px !important;
+}
+.hide{
+  display: none !important;
 }
 
 @media (max-width: 576px) {

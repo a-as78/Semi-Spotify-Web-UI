@@ -5,7 +5,8 @@
   <div class="top-navigation row-reverse-flex">
     <div class="blur-cover"></div>
     <div class="row-reverse-flex">
-      <div class="dashboard row-reverse-flex">
+      <div class="dashboard row-reverse-flex"
+           :class="{hide: notAuthenticated}">
         <div class="dashboard-arrow">
           <img src="../assets/Icons/Path 690.svg">
         </div>
@@ -14,25 +15,38 @@
           <img src="../assets/Icons/Profile.svg">
         </div>
       </div>
+      <div class="row-flex authentication-header" 
+           :class="{hide: authenticated}">
+        <div class="download-item row-flex center">Download</div>
+        <div class="help-item row-flex center">Help</div>
+        <div class="login-item row-flex center">Log In</div>
+        <div class="signup-item active-item row-flex center">Sign Up</div>
+      </div>
       <div class="phone-logo">
         <img src="../assets/Full Logo.svg">
       </div>
-      <div class="search">
+      <div class="search"
+           :class="{hide: notAuthenticated}">
         <input type="search"
                name="search-box"
                placeholder="Search">
       </div>
     </div>
-    <div class="playing-music">
-
+    <div class="playing-music"
+         :class="{hide: notAuthenticated}">
     </div>
-    <div class="navigation-bar">
+    <div class="navigation-bar"
+         :class="{hide: notAuthenticated}">
 
     </div>
     <div class="row-reverse-flex">
-      <div class="tabs row-reverse-flex">
+      <div class="tabs row-reverse-flex"
+           :class="{hide: notAuthenticated}">
         <div class="tab tab1">
-          <div class="active-tab">Home</div>
+          <div class="active-tab"
+               @click="goToHome">
+              Home
+          </div>
         </div>
         <div class="tab tab2">Library</div>
         <div class="tab tab3">Browse</div>
@@ -49,18 +63,30 @@
 // import HamBut from './hamburgerButton.vue';
 
 export default {
-  components: {
-    // HamBut
+  props: {
+    authenticated: Boolean,
+    notAuthenticated: Boolean
   },
   data(){
     return{
-      // userName: 'John Doe'
     }
+  },
+  methods: {
+    goToHome(){
+      this.$router.push({
+        name: "home"
+      })
+    }
+  },
+  created(){
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.hide{
+  display: none;
+}
 .phone-logo{
   display: none !important;
   width: 50px;
@@ -68,6 +94,22 @@ export default {
 }
 .header{
   position: relative;
+}
+.authentication-header{
+  color: white;
+}
+.download-item, .help-item, .login-item, .signup-item{
+  margin: 0px 20px;
+  width: 105px;
+  height: 35px;
+}
+.login-item, .signup-item{
+  border: 1px solid white;
+  border-radius: 20px;
+}
+.active-item{
+  color: black;
+  background-color: white;
 }
 /* .ham-but{
   display: none !important;
@@ -124,6 +166,7 @@ input[name="search-box"]::placeholder {
   margin-left: 40px;
 }
 .active-tab{
+  color: white;
   border: 1px solid none;
   background-color: #161A1A;
   border-radius: 40px;
@@ -162,6 +205,23 @@ input[name="search-box"]::placeholder {
   input[name="search-box"] {
     width: 50px;
   }
+  .active-item{
+    display: none;
+  }
+  .download-item, .help-item, .login-item, .signup-item{
+    margin: 0px 5px;
+    width: 50px;
+    height: 20px;
+    font-size: 14px;
+  }
+  .login-item, .signup-item{
+    border: 1px solid white;
+    border-radius: 7px;
+  }
+  .phone-logo{
+    margin-right: 70px;
+    width: 30px;
+  }
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -187,6 +247,18 @@ input[name="search-box"]::placeholder {
   }
   input[name="search-box"] {
     width: 80px;
+  }
+  .download-item, .help-item, .login-item, .signup-item{
+    margin: 0px 10px;
+    width: 70px;
+    height: 25px;
+  }
+  .login-item, .signup-item{
+    border: 1px solid white;
+    border-radius: 10px;
+  }
+  .phone-logo{
+    margin-right: 80px;
   }
 }
 

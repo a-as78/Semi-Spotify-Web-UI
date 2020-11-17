@@ -1,13 +1,13 @@
 <template>
   <div class="song column-flex">
     <img class="song-cover"
-         :src= song.url 
+         :src="song.url" 
           alt="cover">
     <div class="song-name">{{song.name}}</div>
-    <div class="row-flex center">
+    <div class="row-flex">
       <div v-if="playlist"
            class="artist-like-icon">
-        <img src="../assets/Icons/heart.svg" alt="like">
+        <img src="../assets/Images/heart.png" alt="like">
       </div>
         <div class="song-artist">{{song.detail}}</div>
       </div>

@@ -4,7 +4,8 @@
                       :title="title"
                       :viewAll="viewAll"
                       @next="scrollLeft"
-                      @previous="scrollRight"></component-header>
+                      @previous="scrollRight">
+    </component-header>
     <div class="artists-body row-flex"
          :class="{'songs-body': doScroll , 'songs-body-viewALl': viewAll}"
          ref="artistBox">
