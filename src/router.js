@@ -4,6 +4,7 @@ import GenreOverview from './views/genreOverview.vue';
 import MyPlaylist from './views/myPlaylist.vue';
 import Playlist from './views/playlist.vue';
 import SignUp from './views/signUp.vue';
+import LogIn from './views/logIn.vue';
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
@@ -17,7 +18,8 @@ const router = new VueRouter({
         {path:"/genreoverview" , component: GenreOverview},
         {path:"/myplaylist" , component: MyPlaylist},
         {path:"/playlist" , component: Playlist}, 
-        {path:"/signup" , component: SignUp, name: "signup"}    
+        {path:"/signup" , component: SignUp, name: "signup"},
+        {path:"/login" , component: LogIn, name: "login"}    
     ]
 })
   

@@ -2,35 +2,21 @@
     <div class="signup-body">
         <div class="signup-box column-flex center">
             <div class="title row-flex center">
-                Ready to sign up?
+                What will you listen to today?
             </div>
-            <input type="email" name="email" placeholder="Email Address">
+            <input type="email" name="email" placeholder="Email Address or Username">
             <input type="password" name="pass" placeholder="Password">
-            <input type="text" name="userName" placeholder="User Name">
-            <div class="row-flex item">
-                <input type="date" name="birthDate" valu="Birth Date">
-                <!-- <select id="date-of-birth">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="opel">Opel</option>
-                    <option value="audi">Audi</option>
-                </select>  -->
-                <select id="gender">
-                    <option value="">Gender</option>
-                    <option value="female">Female</option>
-                    <option value="male">Male</option>
-                    <option value="none">Non-Binary</option>
-                </select> 
+            <div class="row-flex center login-box">
+                <input type="checkbox" name="remember">
+                    <label class="remember" for="remember"> Remember me</label>
+                <div class="login-button row-flex center">Log In</div>
             </div>
-            <!-- <div class="g-recaptcha" data-sitekey="Your site key goes here"></div> -->
+            <div class="column-flex center forget">
+                <a href="">Forgot your password?</a>
+            </div>
             <div class="column-flex center">
-                <div>By clicking on sign up you accept</div>
-                <a href="">the terms and lob lob lob</a>
-            </div>
-            <div class="signup-button row-flex center">Sign Up</div>
-            <div class="row-flex center">
                 <div>Have you already an account? </div>
-                <a href="">Log in</a>
+                <div class="signup-button row-flex center">SIGN UP FOR MUSICBOX</div>
             </div>
         </div>
     </div>
@@ -67,38 +53,40 @@ export default {
     width: 100%;
     margin: 40px;
 }
-input, select{
+input{
     border-radius: 4px;
 }
-input[name = email], input[name = pass], input[name = userName]{
+input[name = email], input[name = pass]{
     width: 400px;
     height: 50px;
     margin: 10px;
     border-color: #D5D5D5;
 }
-.item{
-    margin: 10px 10px 100px;
+.remember{
+    color: #99999F;
 }
-
-select{
-    width: 190px;
-    height: 50px;
-    margin-left: 14px;
-    border-color: black;
-}
-input[name = birthDate]{
-    width: 185px;
-    height: 46px;
-    margin-right: 14px;
-    border-color: black;
+.forget{
+    margin: 50px;
 }
 .signup-button {
-    background-color: #2D9BEF;
+    background-color: white;
+    border: 1px solid black;
     border-radius: 20px;
     width: 320px;
     height: 40px;
     margin: 20px;
+    color: black;
+}
+.login-button {
+    background-color: #2D9BEF;
+    border-radius: 20px;
+    width: 150px;
+    height: 40px;
+    margin: 20px 0px 20px 150px;
     color: white;
+}
+.login-box{
+    justify-content: space-between;
 }
 @media (max-width: 576px){
     .signup-box{
@@ -111,32 +99,29 @@ input[name = birthDate]{
         font-size: 20px;
         margin: 20px;
     }
-    input[name = email], input[name = pass], input[name = userName]{
+    input[name = email], input[name = pass]{
         width: 200px;
         height: 30px;
         margin: 5px;
         border-color: #D5D5D5;
-    }
-    .item{
-        margin: 10px 10px 30px;
-    }
-    select{
-        width: 90px;
-        height: 30px;
-        margin-left: 14px;
-        border-color: black;
-    }
-    input[name = birthDate]{
-        width: 85px;
-        height: 26px;
-        margin-right: 14px;
-        border-color: black;
     }
     .signup-button {
         border-radius: 20px;
         width: 150px;
         height: 40px;
         margin: 20px;
+    }
+    .login-button {
+        width: 70px;
+        margin-left: 20px;
+        border-radius: 17px;
+    }
+    .signup-button{
+        width: 200px;
+        font-size: 14px;
+    }
+    .forget{
+        margin: 30px
     }
 }
 @media (min-width: 576px) and (max-width: 768px){
@@ -148,26 +133,14 @@ input[name = birthDate]{
         font-size: 20px;
         margin: 20px;
     }
-    input[name = email], input[name = pass], input[name = userName]{
+    input[name = email], input[name = pass]{
         width: 300px;
         height: 40px;
         margin: 10px;
         border-color: #D5D5D5;
     }
-    .item{
-        margin: 10px 10px 50px;
-    }
-    select{
-        width: 140px;
-        height: 40px;
-        margin-left: 14px;
-        border-color: black;
-    }
-    input[name = birthDate]{
-        width: 135px;
-        height: 36px;
-        margin-right: 14px;
-        border-color: black;
+    .login-button {
+        margin-left: 50px;
     }
 }
 </style>
