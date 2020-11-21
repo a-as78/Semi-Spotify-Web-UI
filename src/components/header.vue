@@ -4,7 +4,8 @@
            :user="userName"></ham-but> -->
   <div class="top-navigation row-reverse-flex">
     <div class="blur-cover"></div>
-    <div class="whole-width row-reverse-flex">
+    <div class="row-reverse-flex"
+         :class="{'whole-width' : notAuthenticated}">
       <div class="dashboard row-reverse-flex"
            :class="{hide: notAuthenticated}">
         <div class="dashboard-arrow">

@@ -4,7 +4,7 @@
           <div class="row-flex">
             <div class="playlist-image">
                 <img class="playlist-cover"
-                     src="../assets/Images/70s ROCK.png" 
+                     src="../assets/Images/Classic rock.png" 
                      alt="playlist cover">
             </div>
             <div class="playlist-info column-flex">
@@ -14,12 +14,10 @@
                 <div class="playlist-duration">88 Songs, 9 hr 13 min</div>
                 <div class="items row-flex center only-phone">
                   <div class="button row-flex center">
-                    Pause
+                    SHUFFLE PLAY
                   </div>
-                  <div class="like-button row-flex center">
-                    <img class="like"
-                          src="../assets/Icons/heart.svg"
-                          alt="like">
+                  <div class="edit-button row-flex center">
+                    EDIT
                   </div>
                   <div class="more-button row-flex center">
                     <img class="more"
@@ -31,12 +29,10 @@
           </div>
           <div class="items row-flex center only-desktop">
               <div class="button row-flex center">
-                  Pause
+                  SHUFFLE PLAY
               </div>
-              <div class="like-button row-flex center">
-                  <img class="like"
-                        src="../assets/Icons/heart.svg"
-                        alt="like">
+              <div class="edit-button row-flex center">
+                  EDIT
               </div>
               <div class="more-button row-flex center">
                   <img class="more"
@@ -80,29 +76,22 @@
             <div class="song-album">Album</div>
             <div class="song-duration">Duration</div>
           </div>
-          <!-- <div class=""></div> -->
           <playlist-song v-for="(song,index) in songs"
                          :key="index"
                          :number="index+1"
-                         :song="song">
+                         :song="song"
+                         :created="true">
           </playlist-song>
         </div>
-        <!-- <div></div> -->
-        <app-artists :artists="artists"
-                     :header="true"
-                     :title="artistTitle"
-                     :viewAll="false"></app-artists>
       </div>
 </template>
 
 <script>
 import PlaylistSong from '../components/playlistSong.vue';
-import AppArtists from '../components/artists.vue';
 
 export default {
     components: {
-      PlaylistSong,
-      AppArtists
+      PlaylistSong
     },
     data(){
       return{
@@ -274,14 +263,18 @@ export default {
     background-image: linear-gradient(to right , #35EDFB, #9B2DEF);
     border-radius: 40px;
 }
-.more-button, .like-button{
-    width: 25px;
-    height: 25px;
+.more-button{
+    width: 40px;
+    height: 38px;
     border: 1px solid white;
     border-radius: 50%;
 }
-.like-button{
+.edit-button{
     margin: 0px 20px;
+    padding: 0px 20px;
+    border: 1px solid white;
+    border-radius: 25px;
+    height: 38px;
 }
 .more , .like{
     width: 15px;
@@ -292,22 +285,24 @@ export default {
 }
 .search-section{
   padding-bottom: 5px;
-  border-bottom: 1px solid white;;
-}
-.songs-display-title, .playlist-search-title{
-  padding: 0px;
-  padding-right: 15px;
+  border-bottom: 1px solid white;
 }
 .playlist-songs-display{
     width: 16%;
     display: flex;
     justify-content: flex-start;
 }
+.songs-display-title, .playlist-search-title{
+  padding: 0px;
+  padding-right: 15px;
+}
 .title, .song-artist, .song-album{
   width: 28%;
 }
 .song-duration{
   width: 16%;
+  display: flex;
+  justify-content: flex-start;
 }
 .playlist{
   margin-top: 30px;
@@ -357,7 +352,7 @@ export default {
     width: 80px;
     height: 30px;
   }
-  .like-button{
+  .edit-button{
     margin: 0px 10px;
   }
   .song-album{

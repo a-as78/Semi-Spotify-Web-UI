@@ -12,19 +12,23 @@
         <div class="artist">{{song.artist}}</div>
         <div class="album">{{song.album}}</div>
         <div class="items row-flex">
-            <div class="row-flex center item duration">{{song.duration}}</div>
+            <div class="row-flex center item duration">
+                {{song.duration}}
+            </div>
             <div class="item row-flex center more-item">
-                <img class="more"
+                <img :class="{show: created , more: playlist}"
                      src="../assets/Icons/More.svg" 
                      alt="">
             </div>
             <div class="item row-flex center like-item">
                 <img class="like"
+                     :class="{hide: created}"
                      src="../assets/Icons/heart.svg"
                      alt="">
             </div>
             <div class="item row-flex center add-item">
                 <img class="add"
+                     :class="{hide: created}"
                      src="../assets/Icons/Group 1338.svg" 
                      alt="">
             </div>
@@ -36,7 +40,13 @@
 export default {
     props: {
         song: Array,
-        number: Number
+        number: Number,
+        created: Boolean
+    },
+    data() {
+        return{
+            playlist: !this.created
+        }
     }
 }
 </script>
@@ -53,6 +63,8 @@ export default {
     width: 28%;
 }
 .items{
+  display: flex;
+  justify-content: flex-start;
   width: 16%;
 }
 .number{
