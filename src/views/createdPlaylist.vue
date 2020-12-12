@@ -95,80 +95,80 @@ export default {
     },
     data(){
       return{
-        songs:[
-          {
-            title: "Rhiannon",
-            artist: "Flleetwood Mac",
-            album: "Fleetwood Mac",
-            duration: "5:53"
-          },
-          {
-            title: "Rhiannon",
-            artist: "Flleetwood Mac",
-            album: "Fleetwood Mac",
-            duration: "5:53"
-          },
-          {
-            title: "Rhiannon",
-            artist: "Flleetwood Mac",
-            album: "Fleetwood Mac",
-            duration: "5:53"
-          },
-          {
-            title: "Rhiannon",
-            artist: "Flleetwood Mac",
-            album: "Fleetwood Mac",
-            duration: "5:53"
-          },
-          {
-            title: "Rhiannon",
-            artist: "Flleetwood Mac",
-            album: "Fleetwood Mac",
-            duration: "5:53"
-          },
-          {
-            title: "Rhiannon",
-            artist: "Flleetwood Mac",
-            album: "Fleetwood Mac",
-            duration: "5:53"
-          },
-          {
-            title: "Rhiannon",
-            artist: "Flleetwood Mac",
-            album: "Fleetwood Mac",
-            duration: "5:53"
-          },
-          {
-            title: "Rhiannon",
-            artist: "Flleetwood Mac",
-            album: "Fleetwood Mac",
-            duration: "5:53"
-          },
-          {
-            title: "Rhiannon",
-            artist: "Flleetwood Mac",
-            album: "Fleetwood Mac",
-            duration: "5:53"
-          },
-          {
-            title: "Rhiannon",
-            artist: "Flleetwood Mac",
-            album: "Fleetwood Mac",
-            duration: "5:53"
-          },
-          {
-            title: "Rhiannon",
-            artist: "Flleetwood Mac",
-            album: "Fleetwood Mac",
-            duration: "5:53"
-          },
-          {
-            title: "Rhiannon",
-            artist: "Flleetwood Mac",
-            album: "Fleetwood Mac",
-            duration: "5:53"
-          }
-        ],
+        // songs:[
+        //   {
+        //     title: "Rhiannon",
+        //     artist: "Flleetwood Mac",
+        //     album: "Fleetwood Mac",
+        //     duration: "5:53"
+        //   },
+        //   {
+        //     title: "Rhiannon",
+        //     artist: "Flleetwood Mac",
+        //     album: "Fleetwood Mac",
+        //     duration: "5:53"
+        //   },
+        //   {
+        //     title: "Rhiannon",
+        //     artist: "Flleetwood Mac",
+        //     album: "Fleetwood Mac",
+        //     duration: "5:53"
+        //   },
+        //   {
+        //     title: "Rhiannon",
+        //     artist: "Flleetwood Mac",
+        //     album: "Fleetwood Mac",
+        //     duration: "5:53"
+        //   },
+        //   {
+        //     title: "Rhiannon",
+        //     artist: "Flleetwood Mac",
+        //     album: "Fleetwood Mac",
+        //     duration: "5:53"
+        //   },
+        //   {
+        //     title: "Rhiannon",
+        //     artist: "Flleetwood Mac",
+        //     album: "Fleetwood Mac",
+        //     duration: "5:53"
+        //   },
+        //   {
+        //     title: "Rhiannon",
+        //     artist: "Flleetwood Mac",
+        //     album: "Fleetwood Mac",
+        //     duration: "5:53"
+        //   },
+        //   {
+        //     title: "Rhiannon",
+        //     artist: "Flleetwood Mac",
+        //     album: "Fleetwood Mac",
+        //     duration: "5:53"
+        //   },
+        //   {
+        //     title: "Rhiannon",
+        //     artist: "Flleetwood Mac",
+        //     album: "Fleetwood Mac",
+        //     duration: "5:53"
+        //   },
+        //   {
+        //     title: "Rhiannon",
+        //     artist: "Flleetwood Mac",
+        //     album: "Fleetwood Mac",
+        //     duration: "5:53"
+        //   },
+        //   {
+        //     title: "Rhiannon",
+        //     artist: "Flleetwood Mac",
+        //     album: "Fleetwood Mac",
+        //     duration: "5:53"
+        //   },
+        //   {
+        //     title: "Rhiannon",
+        //     artist: "Flleetwood Mac",
+        //     album: "Fleetwood Mac",
+        //     duration: "5:53"
+        //   }
+        // ],
         artistTitle: "Featured artists",
         artists: [
           {
@@ -202,6 +202,12 @@ export default {
             detail: "21323"
           }
         ],
+      }
+    },
+    computed: {
+      songs() {
+        console.log(this.$store)
+        return this.$store.getters.songs
       }
     }
 }
@@ -334,26 +340,41 @@ export default {
     display: none;
   }
   .playlist-cover{
-    width: 100px;
+    width: 80px;
   }
   .type, .playlist-detail, .followers-number{
     display: none;
   }
   .playlist-name{
-    font-size: 20px;
+    font-size: 17px;
+    // margin: 0px 0px 10px;
   }
   .playlist-detail{
     font-size: 14px;
+    display: none;
   }
   .playlist-duration{
     font-size: 12px;
+    // display: none;
   }
   .button{
-    width: 80px;
-    height: 30px;
+    width: auto;
+    height: 25px;
+    font-size: 12px;
+    padding: 0px 5px;
   }
   .edit-button{
-    margin: 0px 10px;
+    width: auto;
+    height: 25px;
+    padding: 0px 5px;
+    margin: 0px 5px;
+    font-size: 12px;
+  }
+  .more-button{
+    width: auto;
+    height: 25px;
+    padding: 0px 5px;
+    font-size: 12px;
   }
   .song-album{
     display: none;

@@ -3,37 +3,41 @@
     <div class="popup-body column-flex center">
         <div class="popup-header row-flex">
             <div class="popup-title">
-                Create New Playlist
+                Add New Song
             </div>
             <div class="close-popup">
                 <img class="close-icon"
                      src="../assets/Icons/Close.svg" alt="">
             </div>
         </div>
-        <div class="playlist-title">
-            <input name="title"
+        <div class="fields">
+            <input name="fields"
                    type="text"
-                   placeholder="Title">
+                   placeholder="Name">
         </div>
-        <div class="playlist-description row-flex">
-            <div>
-                description
-            </div>
-            <div>
-                {{counter}}/300
-            </div>
+        <div class="fields">
+            <input name="fields"
+                   type="text"
+                   placeholder="artist">
         </div>
-        <div class="description">
-            <textarea name="description">
-
-            </textarea>
+        <div class="fields">
+            <input name="fields"
+                   type="text"
+                   placeholder="album">
         </div>
+        <form class="fields upload-form"
+              action="/">
+            <label for="myfile">Select Song:</label>
+            <input type="file" 
+                   name="myfile" 
+                   value="Select Song">
+        </form>
         <div class="buttons row-flex">
             <div class="cancel">
                 Cancel
             </div>
-            <div class="create">
-                Create
+            <div class="add">
+                Add
             </div>
         </div>
     </div>
@@ -59,38 +63,31 @@ export default {
     background-color: #3A3A3D;
     width: 500px;
     height: auto;
-    border: 1px solid red;
     border-radius: 8px;
 }
-.popup-header, .playlist-description, .buttons{
+.popup-header, .buttons{
     width: 90%;
     justify-content: space-between;
     padding: 30px 5%;
-}
-.playlist-description{
-    color: #99999F;
-    font-size: 14px;
 }
 .popup-title{
     color: white;
     font-size: 20px;
 }
-input[name = title], textarea[name = description]{
+input[name = fields]{
     border: none;
     background-color: transparent;
 }
 input::placeholder {
     color: white;
 }
-textarea[name = description]{
-    width: 100%;
+.fields{
     color: white;
-}
-.playlist-title, .description{
     width: 90%;
+    height: 30px;
     border-bottom: 1px solid white;
 }
-.cancel, .create{
+.cancel, .add{
     font-size: 16px;
     color: white;
     border-radius: 20px;
@@ -99,10 +96,18 @@ textarea[name = description]{
 .cancel{
     border: 1px solid white;
 }
-.create{
+.add{
     background: linear-gradient(to right, #2D9BEF, #9B2DEF);
 }
-
+.upload-form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+input[name = myfile]{
+    max-width: 200px;
+    color: white;
+}
 @media screen and  (max-width: 576px) {
     .popup-title{
         font-size: 16px;

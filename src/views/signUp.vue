@@ -6,8 +6,9 @@
             </div>
             <input type="email" name="email" placeholder="Email Address">
             <input type="password" name="pass" placeholder="Password">
-            <input type="text" name="userName" placeholder="User Name">
-            <div class="row-flex item">
+            <input type="text" name="firstName" placeholder="First Name">
+            <input type="text" name="lastName" placeholder="Last Name">
+            <!-- <div class="row-flex item">
                 <input type="date" name="birthDate" valu="Birth Date">
                 <select id="gender">
                     <option value="">Gender</option>
@@ -15,7 +16,7 @@
                     <option value="male">Male</option>
                     <option value="none">Non-Binary</option>
                 </select> 
-            </div>
+            </div> -->
             <!-- <div class="g-recaptcha" data-sitekey="Your site key goes here"></div> -->
             <div class="column-flex center">
                 <div>By clicking on sign up you accept</div>
@@ -64,7 +65,7 @@ export default {
 input, select{
     border-radius: 4px;
 }
-input[name = email], input[name = pass], input[name = userName]{
+input[name = email], input[name = pass], input[name = firstName], input[name = lastName]{
     width: 400px;
     height: 50px;
     margin: 10px;

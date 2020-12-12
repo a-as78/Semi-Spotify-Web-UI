@@ -9,6 +9,7 @@ import LogIn from './views/logIn.vue';
 
 
 import PopupTest from './components/createPlaylistPopup.vue';
+import PopupTest2 from './components/createSongPopup.vue';
 
 
 import Vue from 'vue'
@@ -19,20 +20,54 @@ Vue.use(VueRouter);
 const router = new VueRouter({
     // mode: 'history',
     routes: [
-        {path:"/" , component: Home, name: "home"},
-        {path:"/genreandmood" , component: genreAndMood},
-        {path:"/genreoverview" , component: GenreOverview},
-        {path:"/myplaylist" , component: MyPlaylist},
-        {path:"/playlist" , component: Playlist}, 
-        {path:"/createdplaylist" , component: CreatedPlaylist}, 
+        {
+            path:"/" , 
+            component: Home, 
+            name: "home"
+        },
+        {
+            path:"/genreandmood" , 
+            component: genreAndMood
+        },
+        {
+            path:"/genreoverview" , 
+            component: GenreOverview
+        },
+        {
+            path:"/myplaylist" , 
+            component: MyPlaylist
+        },
+        {
+            path:"/playlist" , 
+            component: Playlist
+        }, 
+        {
+            path:"/createdplaylist" , 
+            component: CreatedPlaylist
+        }, 
 
 
-        {path:"/test" , component: PopupTest}, 
+        {
+            path:"/test" , 
+            component: PopupTest
+        }, 
+        {
+            path:"/test2" , 
+            component: PopupTest2
+        }, 
 
 
 
-        {path:"/signup" , component: SignUp, name: "signup"},
-        {path:"/login" , component: LogIn, name: "login"}    
+        {
+            path:"/signup" , 
+            component: SignUp, 
+            name: "signup"
+        },
+        {
+            path:"/login" , 
+            component: LogIn, 
+            name: "login"
+        }    
     ]
 })
   

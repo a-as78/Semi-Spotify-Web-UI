@@ -39,7 +39,7 @@
 <script>
 export default {
     props: {
-        song: Array,
+        song: Object,
         number: Number,
         created: Boolean
     },

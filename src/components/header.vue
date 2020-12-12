@@ -228,6 +228,7 @@ input[name="search-box"]::placeholder {
   }
   .top-navigation{
     height: 40px;
+    padding: 20px;
   }
   .dashboard {
     margin-right: 5px;
