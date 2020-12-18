@@ -26,38 +26,40 @@ const router = new VueRouter({
             name: "home"
         },
         {
-            path:"/genreandmood" , 
-            component: genreAndMood
+            path:"/genre-and-mood" , 
+            component: genreAndMood,
+            name: 'genreAndMood'
         },
         {
-            path:"/genreoverview" , 
-            component: GenreOverview
+            path:"/genre-overview" , 
+            component: GenreOverview,
+            name: 'genreOverview'
         },
         {
-            path:"/myplaylist" , 
-            component: MyPlaylist
+            path:"/my-playlist" , 
+            component: MyPlaylist,
+            name: 'myPlaylist'
         },
         {
-            path:"/playlist" , 
-            component: Playlist
+            path:"/playlist/:id" , 
+            component: Playlist,
+            name: 'playlist'
         }, 
         {
-            path:"/createdplaylist" , 
-            component: CreatedPlaylist
+            path:"/created-playlist" , 
+            component: CreatedPlaylist,
+            name: 'createdPlaylist'
         }, 
-
-
         {
             path:"/test" , 
-            component: PopupTest
+            component: PopupTest,
+            name: "test"
         }, 
         {
             path:"/test2" , 
-            component: PopupTest2
+            component: PopupTest2,
+            name: "test2"
         }, 
-
-
-
         {
             path:"/signup" , 
             component: SignUp, 

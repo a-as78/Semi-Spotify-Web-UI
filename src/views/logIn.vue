@@ -4,12 +4,29 @@
             <div class="title row-flex center">
                 What will you listen to today?
             </div>
-            <input type="email" name="email" placeholder="Email Address or Username">
-            <input type="password" name="pass" placeholder="Password">
+            <validation-observer ref="loginForm">
+                <validation-provider class="column-flex"
+                                     rules="required|phone-number">
+                    <input type="text"
+                           name="phoneNumber"
+                           v-model="userInfo.phoneNumber"
+                           placeholder="Phone Number">
+                </validation-provider>
+                <validation-provider class="column-flex"
+                                     rules="required">
+                    <input type="password"
+                           name="passwrod"
+                           v-model="userInfo.password"
+                           placeholder="Password">
+                </validation-provider>
+            </validation-observer>
             <div class="row-flex center login-box">
                 <input type="checkbox" name="remember">
                     <label class="remember" for="remember"> Remember me</label>
-                <div class="login-button row-flex center">Log In</div>
+                <div class="login-button row-flex center"
+                     @click="login">
+                     Log In
+                </div>
             </div>
             <div class="column-flex center forget">
                 <a href="">Forgot your password?</a>
@@ -23,11 +40,41 @@
 </template>
 
 <script>
+import { LOGIN } from '../store/actions.type'
+import { ValidationObserver, ValidationProvider } from 'vee-validate';
+
+
 export default {
+    components: {
+        ValidationProvider,
+        ValidationObserver
+    },
+    data(){
+        return {
+            userInfo: {
+                firstName : "",
+                lastName : "",
+                phoneNumber: "",
+                password: "",
+                photo: "",
+                email: ""
+            }
+        }
+    },
     mounted() {
       let recaptchaScript = document.createElement('script')
       recaptchaScript.setAttribute('src', 'https://www.google.com/recaptcha/api.js')
       document.head.appendChild(recaptchaScript)
+    },
+    methods: {
+        async login(){
+            console.log("login method called")
+            const validated = await this.$refs.loginForm.validate();
+            console.log(validated)
+            if(validated){
+                await this.$store.dispatch(LOGIN , this.userInfo)
+            }
+        }
     }
 }
 </script>
@@ -56,7 +103,7 @@ export default {
 input{
     border-radius: 4px;
 }
-input[name = email], input[name = pass]{
+input[name = phoneNumber], input[name = pass]{
     width: 400px;
     height: 50px;
     margin: 10px;
@@ -99,7 +146,7 @@ input[name = email], input[name = pass]{
         font-size: 20px;
         margin: 20px;
     }
-    input[name = email], input[name = pass]{
+    input[name = phoneNumber], input[name = pass]{
         width: 200px;
         height: 30px;
         margin: 5px;
@@ -133,7 +180,7 @@ input[name = email], input[name = pass]{
         font-size: 20px;
         margin: 20px;
     }
-    input[name = email], input[name = pass]{
+    input[name = phoneNumber], input[name = pass]{
         width: 300px;
         height: 40px;
         margin: 10px;

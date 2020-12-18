@@ -9,9 +9,9 @@
             </div>
             <div class="playlist-info column-flex">
                 <div class="type">Playlist</div>
-                <div class="playlist-name">70s Rock Anthems</div>
-                <div class="playlist-detail">Golden age of rock. Cover: Led Zeppelin</div>
-                <div class="playlist-duration">88 Songs, 9 hr 13 min</div>
+                <div class="playlist-name">{{playlist.name}}</div>
+                <div class="playlist-detail">{{playlist.description}}</div>
+                <div class="playlist-duration">{{playlist.count_song}} Songs, 9 hr 13 min</div>
                 <div class="items row-flex center only-phone">
                   <div class="button row-flex center">
                     Pause
@@ -80,14 +80,16 @@
             <div class="song-album">Album</div>
             <div class="song-duration">Duration</div>
           </div>
-          <!-- <div class=""></div> -->
           <playlist-song v-for="(song,index) in songs"
+                         @click="setCurrentSong(song)" 
                          :key="index"
                          :number="index+1"
                          :song="song">
           </playlist-song>
+          <!-- <audio controls>
+            <source :src="playlist.songs[0].filePath">
+          </audio> -->
         </div>
-        <!-- <div></div> -->
         <app-artists :artists="artists"
                      :header="true"
                      :title="artistTitle"
@@ -98,123 +100,161 @@
 <script>
 import PlaylistSong from '../components/playlistSong.vue';
 import AppArtists from '../components/artists.vue';
+import { FETCH_PLAYLIST , FETCH_SONG_FILE} from '../store/actions.type';
 
 export default {
-    components: {
-      PlaylistSong,
-      AppArtists
-    },
-    data(){
-      return{
-        songs:[
+  components: {
+    PlaylistSong,
+    AppArtists
+  },
+  data(){
+    return{
+      // songs:[
+      //   {
+      //     title: "Rhiannon",
+      //     artist: "Flleetwood Mac",
+      //     album: "Fleetwood Mac",
+      //     duration: "5:53"
+      //   },
+      //   {
+      //     title: "Rhiannon",
+      //     artist: "Flleetwood Mac",
+      //     album: "Fleetwood Mac",
+      //     duration: "5:53"
+      //   },
+      //   {
+      //     title: "Rhiannon",
+      //     artist: "Flleetwood Mac",
+      //     album: "Fleetwood Mac",
+      //     duration: "5:53"
+      //   },
+      //   {
+      //     title: "Rhiannon",
+      //     artist: "Flleetwood Mac",
+      //     album: "Fleetwood Mac",
+      //     duration: "5:53"
+      //   },
+      //   {
+      //     title: "Rhiannon",
+      //     artist: "Flleetwood Mac",
+      //     album: "Fleetwood Mac",
+      //     duration: "5:53"
+      //   },
+      //   {
+      //     title: "Rhiannon",
+      //     artist: "Flleetwood Mac",
+      //     album: "Fleetwood Mac",
+      //     duration: "5:53"
+      //   },
+      //   {
+      //     title: "Rhiannon",
+      //     artist: "Flleetwood Mac",
+      //     album: "Fleetwood Mac",
+      //     duration: "5:53"
+      //   },
+      //   {
+      //     title: "Rhiannon",
+      //     artist: "Flleetwood Mac",
+      //     album: "Fleetwood Mac",
+      //     duration: "5:53"
+      //   },
+      //   {
+      //     title: "Rhiannon",
+      //     artist: "Flleetwood Mac",
+      //     album: "Fleetwood Mac",
+      //     duration: "5:53"
+      //   },
+      //   {
+      //     title: "Rhiannon",
+      //     artist: "Flleetwood Mac",
+      //     album: "Fleetwood Mac",
+      //     duration: "5:53"
+      //   },
+      //   {
+      //     title: "Rhiannon",
+      //     artist: "Flleetwood Mac",
+      //     album: "Fleetwood Mac",
+      //     duration: "5:53"
+      //   },
+      //   {
+      //     title: "Rhiannon",
+      //     artist: "Flleetwood Mac",
+      //     album: "Fleetwood Mac",
+      //     duration: "5:53"
+      //   }
+      // ],
+      songs: [
+        {
+          filePath: ""
+        }
+      ],
+      artistTitle: "Featured artists",
+      artists: [
+        {
+          name: "name",
+          url: require("../assets/Images/Mask Group 305.png"),
+          detail: "21323"
+        },
+        {
+          name: "name",
+          url: require("../assets/Images/Mask Group 321.png"),
+          detail: "21323"
+        },
+        {
+          name: "name",
+          url: require("../assets/Images/The Velvet Underground.png"),
+          detail: "21323"
+        },
+        {
+          name: "name",
+          url: require("../assets/Images/Lou Reed.png"),
+          detail: "21323"
+        },
+        {
+          name: "name",
+          url: require("../assets/Images/Kurt.png"),
+          detail: "21323"
+        },
+        {
+          name: "name",
+          url: require("../assets/Images/Bowie.png"),
+          detail: "21323"
+        }
+      ],
+      playlist: {
+        id: this.$route.params.id,
+        name: "",
+        photo: "",
+        description: "",
+        count_song: 0,
+        songs: [
           {
-            title: "Rhiannon",
-            artist: "Flleetwood Mac",
-            album: "Fleetwood Mac",
-            duration: "5:53"
-          },
-          {
-            title: "Rhiannon",
-            artist: "Flleetwood Mac",
-            album: "Fleetwood Mac",
-            duration: "5:53"
-          },
-          {
-            title: "Rhiannon",
-            artist: "Flleetwood Mac",
-            album: "Fleetwood Mac",
-            duration: "5:53"
-          },
-          {
-            title: "Rhiannon",
-            artist: "Flleetwood Mac",
-            album: "Fleetwood Mac",
-            duration: "5:53"
-          },
-          {
-            title: "Rhiannon",
-            artist: "Flleetwood Mac",
-            album: "Fleetwood Mac",
-            duration: "5:53"
-          },
-          {
-            title: "Rhiannon",
-            artist: "Flleetwood Mac",
-            album: "Fleetwood Mac",
-            duration: "5:53"
-          },
-          {
-            title: "Rhiannon",
-            artist: "Flleetwood Mac",
-            album: "Fleetwood Mac",
-            duration: "5:53"
-          },
-          {
-            title: "Rhiannon",
-            artist: "Flleetwood Mac",
-            album: "Fleetwood Mac",
-            duration: "5:53"
-          },
-          {
-            title: "Rhiannon",
-            artist: "Flleetwood Mac",
-            album: "Fleetwood Mac",
-            duration: "5:53"
-          },
-          {
-            title: "Rhiannon",
-            artist: "Flleetwood Mac",
-            album: "Fleetwood Mac",
-            duration: "5:53"
-          },
-          {
-            title: "Rhiannon",
-            artist: "Flleetwood Mac",
-            album: "Fleetwood Mac",
-            duration: "5:53"
-          },
-          {
-            title: "Rhiannon",
-            artist: "Flleetwood Mac",
-            album: "Fleetwood Mac",
-            duration: "5:53"
+            filePath: ""
           }
-        ],
-        artistTitle: "Featured artists",
-        artists: [
-          {
-            name: "name",
-            url: require("../assets/Images/Mask Group 305.png"),
-            detail: "21323"
-          },
-          {
-            name: "name",
-            url: require("../assets/Images/Mask Group 321.png"),
-            detail: "21323"
-          },
-          {
-            name: "name",
-            url: require("../assets/Images/The Velvet Underground.png"),
-            detail: "21323"
-          },
-          {
-            name: "name",
-            url: require("../assets/Images/Lou Reed.png"),
-            detail: "21323"
-          },
-          {
-            name: "name",
-            url: require("../assets/Images/Kurt.png"),
-            detail: "21323"
-          },
-          {
-            name: "name",
-            url: require("../assets/Images/Bowie.png"),
-            detail: "21323"
-          }
-        ],
+        ]
       }
     }
+  },
+  async created() {
+    console.log("HEREE!!!!")
+    await this.getPlaylist()
+  },
+  methods: {
+    async getPlaylist(){
+      await this.$store.dispatch(FETCH_PLAYLIST , this.playlist.id)
+      this.playlist = await this.$store.getters.playlist
+      this.songs = this.playlist.songs
+      console.log("songs" , this.songs[0])
+      console.log("plaaa" , this.playlist.songs[0].filePath)
+      // console.log("songs" , this.playlist.songs[0].filePath)
+      // this.getSongFile()
+    },
+    async getSongFile(){
+      // this.songs[0].filePath = await this.$store.dispatch(FETCH_SONG_FILE, this.playlist.songs[0].id)
+      console.log("songs!!!!!", this.songs)
+      this.songs[0].filePath = await this.$store.dispatch(FETCH_SONG_FILE, 42)
+    }
+  }
 }
 </script>
 

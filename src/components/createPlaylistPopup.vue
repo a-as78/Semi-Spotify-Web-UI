@@ -32,7 +32,8 @@
             <div class="cancel">
                 Cancel
             </div>
-            <div class="create">
+            <div class="create"
+                 @click="create">
                 Create
             </div>
         </div>
@@ -45,6 +46,11 @@ export default {
     data(){
         return{
             counter: 0
+        }
+    },
+    methods: {
+        create(){
+            // this.$store.
         }
     }
 }

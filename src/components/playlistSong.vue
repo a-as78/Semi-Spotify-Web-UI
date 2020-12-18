@@ -7,10 +7,11 @@
                      src="../assets/Images/Image 386.png"
                      alt="song cover">
             </div>
-            <div class="name">{{song.title}}</div>
+            <div class="name"
+                 @click="setCurrentSong(song)">{{song.name}}</div>
         </div>
-        <div class="artist">{{song.artist}}</div>
-        <div class="album">{{song.album}}</div>
+        <div class="artist">{{song.artistName}}</div>
+        <div class="album">{{song.albumName}}</div>
         <div class="items row-flex">
             <div class="row-flex center item duration">
                 {{song.duration}}
@@ -46,6 +47,12 @@ export default {
     data() {
         return{
             playlist: !this.created
+        }
+    },
+    methods: {
+        async setCurrentSong(song){
+            await this.$store.commit("setCurrentSong", song);
+            console.log("DONE!!!", song)
         }
     }
 }

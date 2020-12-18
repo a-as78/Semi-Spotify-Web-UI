@@ -2,11 +2,11 @@
   <div class="player-body row-flex">
     <div class="song row-flex">
       <div class="player-song-cover">
-        <img class="song-cover" src="../assets/Images/Image 59.png" alt="cover">
+        <img class="song-cover" :src="song.photo" alt="cover">
       </div>
       <div class="song-detail column-flex">
-        <div class="player-song-name">Rebel Rebel</div>
-        <div class="player-song-artist">David Bowie</div>
+        <div class="player-song-name">{{song.name}}</div>
+        <div class="player-song-artist">{{song.artistName}}</div>
       </div>
       <div class="song-feature">
         <img class="player-like-icon" 
@@ -18,15 +18,36 @@
     <div class="section-control row-flex">
       <div class="player-section column-flex">
         <div class="player-buttons row-flex">
-          <img class="button" src="../assets/Icons/Shuffle18.svg" alt="shuffle">
-          <img class="button" src="../assets/Icons/prev.svg" alt="shuffle">
-          <img class="button" src="../assets/Icons/Pause.svg" alt="shuffle">
-          <img class="button" src="../assets/Icons/next.svg" alt="shuffle">
-          <img class="button" src="../assets/Icons/Repeat 18.svg" alt="shuffle">
+          <img class="button"
+               src="../assets/Icons/Shuffle18.svg" 
+               alt="shuffle">
+          <img class="button"
+               src="../assets/Icons/prev.svg"
+                alt="shuffle">
+          <img v-if="isPlaying"
+               class="button"
+               @click.prevent="pause"
+               src="../assets/Icons/Pause.svg"
+               alt="shuffle">
+          <img v-if="isNotPlaying"
+               class="button"
+               @click.prevent="play"
+               src="../assets/Icons/Play.svg"
+               alt="shuffle">
+          <img class="button"
+               src="../assets/Icons/next.svg"
+               alt="shuffle">
+          <img class="button"
+               src="../assets/Icons/Repeat 18.svg" 
+               alt="shuffle">
         </div>
         <div class="player-duration-bar row-flex">
           <div class="played-duration">2:00</div>
-          <div class="player-bar"></div>
+          <div class="player-bar">
+            <div class="player-bar-played"
+                 ref="bar"
+                 :style="{width: `${bar}%`}"></div>
+          </div>
           <div class="player-song-duration">4:00</div>
         </div>
       </div>
@@ -45,7 +66,67 @@
 <script>
 
 export default {
-  components: {
+  components: { 
+  },
+  data(){
+    return {
+      isPlaying: false,
+      isNotPlaying: !this.isPlaying,
+      currentTime: "",
+      songDuration: "",
+      test: {
+        a: false
+      },
+      bar: 0
+    }
+  },
+  created(){
+    this.getCurrentSong()
+    this.player.ontimeupdate = () => {
+      this.bar = (this.player.currentTime/this.player.duration)*100
+    };
+  },
+  computed: {
+    song() {
+      return this.$store.getters.currentSong;
+    },
+    player() {
+      let player = new Audio(this.$store.getters.currentSong.filePath)
+      return player;
+    },
+    // bar(){
+    //   console.log('bar')
+    //   console.log(this.player)
+    //   console.log(this.player.duration)
+    //   console.log(this.player.currentTime / this.player.duration)
+    //   return ((this.player.currentTime / this.player.duration) * 100)
+    // }
+
+    // bar(){
+    //   return (this.currentTime/this.songDuration)*100
+    // }
+  },
+  watch: {
+  },
+  methods: {
+    getCurrentSong(){
+      return this.song
+    },
+    play(){
+      this.isPlaying = true;
+      this.isNotPlaying = false;
+      this.player.play();
+      this.test.a = !this.test.a
+      console.log((this.player.currentTime / this.player.duration)*100)
+    },
+    pause(){
+      this.isPlaying = false;
+      this.isNotPlaying = true;
+      this.player.pause();
+    },
+    // changeVol(){
+    //   this.player.volume = document.getElementById("change_vol").value;
+    // }
   }
 }
 </script>
@@ -95,9 +176,17 @@ export default {
   align-items: center;
 }
 .player-bar{
+  position: relative;
   height: 5px;
   border-bottom: 1px solid white;
   width: 400px;
+}
+.player-bar-played{
+  position: absolute;
+  bottom: -1px;
+  left: 0px;
+  height: 5px;
+  border-bottom: 1px solid hotpink;
 }
 .player-playlist, .player-volume{
   padding: 0px 12px;
@@ -114,6 +203,9 @@ export default {
 .settings{
   display: flex;
   justify-content: flex-end;
+}
+.song-cover{
+  width: 60px;
 }
 
 @media (max-width: 576px) {
